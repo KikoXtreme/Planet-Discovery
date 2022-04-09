@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthService } from 'src/app/auth.service';
+import { AuthService } from 'src/app/auth/auth.service';
 import { IUser } from '../interfaces';
 
 @Component({
@@ -26,5 +26,15 @@ export class HeaderComponent implements OnInit {
       return;
     }
     this.isLoggedOut = true;
+
+    this.authService.logout$().subscribe({
+      complete: () => {
+        this.isLoggedOut = false;
+        this.router.navigate(['/home']);
+      },
+      error: (error) => {
+        this.isLoggedOut = false;
+      }
+    })
   }
 }
