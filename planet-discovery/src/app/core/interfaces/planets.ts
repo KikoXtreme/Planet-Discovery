@@ -18,10 +18,10 @@ import { IUser } from "./user";
 // }
 
 // Option 2
-export interface ITheme<T = string> extends IBase {
+export interface IPlanet<T = string> extends IBase {
     subscribers: string[];
     posts: T[];
-    themeName: string;
+    planetName: string;
     userId: IUser;
 }
 

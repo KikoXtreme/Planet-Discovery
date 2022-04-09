@@ -1,0 +1,38 @@
+<div class="new-planet-border">
+    <div class="header-background">
+        <span>New Discovery</span>
+    </div>
+    <form #newPlanetForm="ngForm" (ngSubmit)="submitNewPlanet(newPlanetForm)">
+        <div class="new-planet-title">
+            <label for="planetName">Planet's Name <span class="red">*</span></label>
+            <input #planetName="ngModel" type="text" name="planetName" ngModel id="planetName" required minlength="5">
+
+            <!-- <ng-container *ngIf="planetName.touched && planetName.invalid">
+                <p *ngIf="planetName.errors['required']" class="error">
+                    Planet name is required.
+                </p>
+                <p *ngIf="planetName.errors['minlength']" class="error">
+                    Planet name must be at least 5 characters long.
+                </p>
+            </ng-container> -->
+        </div>
+        <div class="new-planet-content">
+            <label for="postText">Post <span class="red">*</span></label>
+            <textarea #postText="ngModel" type="text" name="postText" ngModel id="postText" rows="8" class="height" required minlength="10"></textarea>
+            
+            <!-- <ng-container *ngIf="postText.touched && postText.invalid">
+                <p *ngIf="postText.errors['required']" class="error">
+                    The field with your post is required.
+                </p>
+                <p *ngIf="postText.errors['minlength']" class="error">
+                    Post must be at least 10 characters long.
+                </p>
+            </ng-container> -->
+        </div>
+        <div class="new-planet-buttons">
+            <button type="button" (click)="navigateToHome()" class="cancel">Cancel</button>
+            <button [disabled]="newPlanetForm.invalid" class="public">Post</button>
+        </div>
+
+    </form>
+</div>

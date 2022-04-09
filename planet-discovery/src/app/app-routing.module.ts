@@ -19,6 +19,10 @@ const routes: Routes = [
     component: AboutPageComponent,
   },
   {
+    path: 'planets',
+    loadChildren: () => import('./feature/planets/planets.module').then(m => m.PlanetsModule),
+  },
+  {
     path: '**',
     component: NotFoundPageComponent,
   },
