@@ -3,15 +3,15 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { WelcomeComponent } from './welcome/welcome.component';
+import { AboutPageComponent } from './about-page/about-page.component';
 
 
 
 @NgModule({
   declarations: [
+    AboutPageComponent,
     HomePageComponent,
     NotFoundPageComponent,
-    WelcomeComponent
   ],
   imports: [
     CommonModule,

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutPageComponent implements OnInit {
 
+  imgPath: String = 'https://exoplanets.nasa.gov/system/news_items/main_images/1581_ManyExoplanets1280.jpg';
+
   constructor() { }
 
   ngOnInit(): void {

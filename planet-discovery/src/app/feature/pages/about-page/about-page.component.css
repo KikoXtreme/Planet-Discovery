@@ -1,0 +1,73 @@
+.imgContainer {
+    width: 1000px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    box-shadow: 10px 10px 61px -25px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 61px -25px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 61px -25px rgba(0, 0, 0, 0.75);
+    border-radius: 30px;
+}
+
+a,
+.imgContainer div h5 {
+    font-size: 15px;
+    font-style: italic;
+    text-decoration: none;
+    color: rgb(100, 100, 100);
+}
+
+.planet-discovery-logo {
+    display: inline;
+    padding: 15px 10px 10px 10px;
+    border-radius: 10px;
+}
+
+section.about-content .planet-discovery-logo a {
+    font-size: 25px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-decoration: none;
+}
+
+.planet-discovery-logo span:nth-child(1) {
+    color: green;
+    font-style: italic;
+}
+
+.planet-discovery-logo span:nth-child(2) {
+    color: darkblue;
+    /* font-style: italic; */
+}
+
+.about-content p:nth-child(2) {
+    display: inline;
+
+}
+
+.about-content {
+    width: 65%;
+    margin: auto;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5%;
+}
+
+.about-content p,
+.about-content a {
+    font-size: 20px;
+}
+
+.about-content a {
+    color: grey;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.about-content a:hover {
+    color: rgb(92, 86, 86);
+}
