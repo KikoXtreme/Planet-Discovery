@@ -7,7 +7,7 @@
 .new-planet-border {
     border: 1px solid;
     border-radius: 0.5em;
-    width: 80%;
+    width: 100%;
     margin: auto;
     margin-top: 2em;
     padding: 1em;
@@ -18,8 +18,10 @@
 }
 
 .header-background {
-    background-color: #4ebced;
-    border: 1px solid #4ebced;
+    /* background-color: blue; */
+    /* background-color: rgba(0, 0, 128, 0.685); */
+    background: linear-gradient(0deg, rgb(12, 0, 182) 0%, rgb(99, 169, 200) 35%, rgb(1, 17, 20) 100%);
+    border: 1px solid black;
     padding: 1.5em;
     padding-bottom: 0;
     margin-bottom: 1em;
@@ -72,6 +74,7 @@ button+button {
 }
 
 .new-planet-buttons button {
+    background: linear-gradient(0deg, rgb(12, 0, 182) 0%, rgb(99, 169, 200) 35%, rgb(1, 17, 20) 100%);
     padding: 0.4em 1.5em;
     border: 1px solid #333333;
     border-radius: 0.3em;
