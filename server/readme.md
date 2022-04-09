@@ -1,4 +1,4 @@
-# REST-api for Angular course in SoftUni
+# REST-api for Angular project
 
 ## Getting started
 Let's make our first API request to the REST-api!
@@ -13,7 +13,7 @@ Here is the response we get:
 {
     "name": "rest-api",
     "version": "1.0.0",
-    "description": "REST-api for back-end of Angular course workshop in SoftUni",
+    "description": "server: REST-api for back-end for Angular project",
     "main": "index.js",
 }
 ```
@@ -67,7 +67,7 @@ Required:
 
 Not Required
 
-```tel``` : [string] -- Optional;
+```country``` : [string] -- Optional;
 
 ### Success Response:
 
@@ -76,7 +76,7 @@ Code: 200
 Content: 
 ``` 
 {
-    "themes": [],
+    "planets": [],
     "posts": [],
     "_id": "5f1875690916010017964978",
     "name": "John Doe",
@@ -127,7 +127,7 @@ Code: 200
 Content: 
 ``` 
 {
-    "themes": ["5f85c51996b5601b2406e5b7"],
+    "planets": ["5f85c51996b5601b2406e5b7"],
     "posts": ["5f86bdcde012743fe4f5b324"],
     "_id": "5f1875690916010017964978",
     "name": "John Doe",
@@ -167,15 +167,15 @@ Content:
 }
 ```
 
-# Endpoints: Themes
+# Endpoints: Planets
 
-* ```/themes```
-* ```/themes/:themeId```
+* ```/planets```
+* ```/planets/:planetId```
 
-## Get Themes
-Returns all themes as json.
+## Get Planets
+Returns all planets as json.
 
-### URL --> ```/themes```
+### URL --> ```/planets```
 
 ### Method --> ```GET```
 
@@ -190,7 +190,7 @@ Content:
         "subscribers": ["5f8580d25d1da62568dd38fd"],
         "posts": ["5f858dd2d895ad23602db9d5"],
         "_id": "5f858dd2d895ad23602db9d4",
-        "themeName": "Some Theme",
+        "planetsName": "Some Planets",
         "userId": "5f8580d25d1da62568dd38fd",
         "created_at": "2020-10-13T11:21:54.863Z",
         "updatedAt": "2020-10-13T11:21:54.898Z",
@@ -210,10 +210,10 @@ Content:
 }
 ```
 
-## Post Theme
-Creates new Theme with the first post of the author and returns the theme as json.
+## Post Planet
+Creates new Planet with the first post of the author and returns the planet as json.
 
-### URL --> ```/themes```
+### URL --> ```/planets```
 
 ### Method --> ```POST```
 
@@ -221,15 +221,15 @@ Creates new Theme with the first post of the author and returns the theme as jso
 
 ```
 {
-    "themeName": "Some Theme Title",
+    "planetName": "Some Planet Title",
     "postText": "Some Post text"
 }
 ```
 
 Required:
 
-```themeName``` : [string] -- The Title of your new Theme, which you want to create
-```postText``` : [string] -- The text of your post. This post will be append as first comment on your Theme.
+```planetName``` : [string] -- The Title of your new Planet, which you want to create
+```postText``` : [string] -- The text of your post. This post will be append as first comment on your Planet.
 
 ### Success Response:
 
@@ -241,7 +241,7 @@ Content:
     "subscribers": ["5f86c1f0a112c130e89964af"],
     "posts": ["5f86c38abfa44331a0ff0094"],
     "_id": "5f86c38abfa44331a0ff0093",
-    "themeName": "Some Theme Title",
+    "planetName": "Some Planet Title",
     "userId": "5f86c1f0a112c130e89964af",
     "created_at": "2020-10-14T09:23:22.102Z",
     "updatedAt": "2020-10-14T09:23:22.114Z",
@@ -261,9 +261,9 @@ Content:
 ```
 
 ## Create Post
-Creates new Post of the author and returns the theme as json.
+Creates new Post of the author and returns the planet as json.
 
-### URL --> ```/themes/:themeId```
+### URL --> ```/planets/:planetId```
 
 ### Method --> ```POST```
 
@@ -288,7 +288,7 @@ Content:
     "5f85b2501141b13a04a9139d"
 ],
 "_id": "5f858dd2d895ad23602db9d4",
-"themeName": "Some Theme",
+"planetName": "Some Planet",
 "userId": "5f8580d25d1da62568dd38fd",
 "created_at": "2020-10-13T11:21:54.863Z",
 "updatedAt": "2020-10-13T13:57:36.466Z",
@@ -309,12 +309,12 @@ Content:
 
 # Endpoints: Posts
 
-* ```/themes/:themeId/posts/:postId```
+* ```/planets/:planetId/posts/:postId```
 
 ## Edit Post
 Edit Post if the user is the author of the post and returns the changed post.
 
-### URL --> ```/themes/:themeId/posts/:postId```
+### URL --> ```/planets/:planetId/posts/:postId```
 
 ### Method --> ```PUT```
 
@@ -337,7 +337,7 @@ Content:
     "_id": "5f86c3fcbfa44331a0ff0095",
     "text": "Changed text",
     "userId": "5f86c1f0a112c130e89964af",
-    "themeId": "5f85c51996b5601b2406e5b7",
+    "planetId": "5f85c51996b5601b2406e5b7",
     "created_at": "2020-10-14T09:25:16.203Z",
     "updatedAt": "2020-10-14T09:31:45.021Z",
     "__v": 0
@@ -367,7 +367,7 @@ Content:
 ## Delete Post
 Deletes Post if the user is the author of the post and returns the deleted post.
 
-### URL --> ```/themes/:themeId/posts/:postId```
+### URL --> ```/planets/:planetId/posts/:postId```
 
 ### Method --> ```DELETE```
 
@@ -382,7 +382,7 @@ Content:
     "_id": "5f86c3fcbfa44331a0ff0095",
     "text": "Changed text",
     "userId": "5f86c1f0a112c130e89964af",
-    "themeId": "5f85c51996b5601b2406e5b7",
+    "planetId": "5f85c51996b5601b2406e5b7",
     "created_at": "2020-10-14T09:25:16.203Z",
     "updatedAt": "2020-10-14T09:33:56.595Z",
     "__v": 0
@@ -449,17 +449,17 @@ Content:
 .post /profile - post user info
 .put /profile - edit user info
 
-themes
-.get /themes - lists all themes
-.post /themes - create new theme only for registered users
+planets
+.get /planets - lists all planets
+.post /planets - create new planet only for registered users
 
 posts:
-.get themes/id - get all posts for theme
-.post themes/id - create post in theme by id only for registered users
-.put themes/id/posts/id - edit post only possible for author
-.delete themes/id/posts/id - delete post only possible for author -->
+.get planets/id - get all posts for planet
+.post planets/id - create post in planet by id only for registered users
+.put planets/id/posts/id - edit post only possible for author
+.delete planets/id/posts/id - delete post only possible for author -->
 
 
 <!-- http://localhost:3000/api/users/register --  {"name":"SomeName","email":"some@email.com","username":"someUsername","password":"12345","rePassword":"12345"} -->
-<!--http://localhost:3000/api/themes -- {"themeName":"Some Theme", "userId":"5f85bf709a517d36f4abe656", "post": "Some Post" } -->
-<!-- http://localhost:3000/api/themes/5f858dd2d895ad23602db9d4  -- {"userId":"5f8580d25d1da62568dd38fd", "postText": "Some Post textsdfasdf" } -->
+<!--http://localhost:3000/api/planets -- {"planetName":"Some Planet", "userId":"5f85bf709a517d36f4abe656", "post": "Some Post" } -->
+<!-- http://localhost:3000/api/planets/5f858dd2d895ad23602db9d4  -- {"userId":"5f8580d25d1da62568dd38fd", "postText": "Some Post textsdfasdf" } -->
