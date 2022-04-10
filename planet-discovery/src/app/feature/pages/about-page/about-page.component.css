@@ -33,16 +33,6 @@ section.about-content .planet-discovery-logo a {
     text-decoration: none;
 }
 
-.planet-discovery-logo span:nth-child(1) {
-    color: rgb(173, 185, 230);
-    /* font-style: italic; */
-}
-
-.planet-discovery-logo span:nth-child(2) {
-    color: blue;
-    /* font-style: italic; */
-}
-
 .about-content p:nth-child(2) {
     display: inline;
 
@@ -64,7 +54,7 @@ section.about-content .planet-discovery-logo a {
 }
 
 .about-content a {
-    color: grey;
+    color: rgb(164, 164, 164);
     text-decoration: underline;
     font-weight: bold;
 }
