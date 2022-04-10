@@ -4,7 +4,7 @@
     </div>
     <form #newPlanetForm="ngForm" (ngSubmit)="submitNewPlanet(newPlanetForm)">
         <div class="new-planet-title">
-            <label for="planetName">Planet's Name <span class="red">*</span></label>
+            <label for="planetName">Planet's Name <span class="red">* </span></label>
             <input #planetName="ngModel" type="text" name="planetName" ngModel id="planetName" required minlength="5">
 
             <ng-container *ngIf="planetName.touched && planetName.invalid">

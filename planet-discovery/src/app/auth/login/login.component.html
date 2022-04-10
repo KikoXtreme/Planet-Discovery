@@ -8,7 +8,7 @@
             <label for="email"><span><i class="fas fa-at"></i></span></label>
             <input formControlName="email"
                 [class.input-error]="loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid"
-                type="email" name="email" id="email" placeholder="john.doe@gmail.com">
+                type="email" name="email" id="email" placeholder="kiril.valkov@gmail.com">
         </p>
         <ng-container *ngIf="loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid">
             <p *ngIf="loginFormGroup.controls['email'].errors['required']" class="error">
@@ -24,7 +24,7 @@
             <label for="password"><span><i class="fas fa-lock"></i></span></label>
             <input formControlName="password"
                 [class.input-error]="loginFormGroup.controls['password'].touched && loginFormGroup.controls['password'].invalid"
-                type="password" name="password" id="password" placeholder="******">
+                type="password" name="password" id="password" placeholder="*****">
         </p>
 
         <ng-container

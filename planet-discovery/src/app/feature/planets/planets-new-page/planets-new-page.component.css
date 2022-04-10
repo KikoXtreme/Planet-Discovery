@@ -1,16 +1,12 @@
-:host {
-    width: 100%;
-}
-
-/* new-planet */
-
 .new-planet-border {
-    border: 1px solid;
-    border-radius: 0.5em;
+    border: .1em solid rgba(0, 0, 255, 0.5);
+    border-radius: 1.5em;
     width: 100%;
     margin: auto;
-    margin-top: 2em;
-    padding: 1em;
+    margin-top: 1em;
+    padding: 1.1em;
+    background-color: whitesmoke;
+    box-shadow: 0 0 3em 0 rgb(12, 69, 211);
 }
 
 .new-planet-border .input {
@@ -18,22 +14,21 @@
 }
 
 .header-background {
-    /* background-color: blue; */
-    /* background-color: rgba(0, 0, 128, 0.685); */
     background: linear-gradient(0deg, rgb(12, 0, 182) 0%, rgb(99, 169, 200) 35%, rgb(1, 17, 20) 100%);
     border: 1px solid black;
     padding: 1.5em;
     padding-bottom: 0;
     margin-bottom: 1em;
-    border-top-right-radius: 0.5em;
-    border-top-left-radius: 0.5em;
+    border-top-right-radius: 1.5em;
+    border-top-left-radius: 1.5em;
 }
 
 .header-background span {
-    background-color: #fff;
+    background-color: whitesmoke;
     padding: 0.5em;
-    margin-top: 1em;
-    border-radius: 0.3em;
+    margin-top: 0.5em;
+    border-top-right-radius: 1.5em;
+    border-top-left-radius: 1.5em;
 }
 
 .title, .new-planet-content {
@@ -77,7 +72,7 @@ button+button {
     background: linear-gradient(0deg, rgb(12, 0, 182) 0%, rgb(99, 169, 200) 35%, rgb(1, 17, 20) 100%);
     padding: 0.4em 1.5em;
     border: 1px solid #333333;
-    border-radius: 0.3em;
+    border-radius: 1.5em;
 }
 
 p.error {

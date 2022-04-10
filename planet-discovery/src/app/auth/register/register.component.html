@@ -1,14 +1,14 @@
 <form class="register" [formGroup]="registerFormGroup" (ngSubmit)="handleRegister()">
 
     <fieldset>
-        <h2>Sigh Up</h2>
+        <h2>Register</h2>
 
         <!-- username -->
         <p class="field field-icon">
             <label for="username"><span><i class="fas fa-user-astronaut"></i></span></label>
             <input formControlName="username"
                 [class.input-error]="registerFormGroup.controls['username'].touched && registerFormGroup.controls['username'].invalid"
-                type="text" name="username" id="username" placeholder="Johny">
+                type="text" name="username" id="username" placeholder="Kiril">
         </p>
         <ng-container
             *ngIf="registerFormGroup.controls['username'].touched && registerFormGroup.controls['username'].invalid">
@@ -25,7 +25,7 @@
             <label for="email"><span><i class="fas fa-at"></i></span></label>
             <input formControlName="email"
                 [class.input-error]="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid"
-                type="email" name="email" id="email" placeholder="john.doe@gmail.com">
+                type="email" name="email" id="email" placeholder="kiril.valkov@gmail.com">
         </p>
         <ng-container
             *ngIf="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid">
@@ -43,7 +43,7 @@
                 <label for="password"><span><i class="fas fa-lock"></i></span></label>
                 <input
                     [class.input-error]="passwordsGroup.controls['password'].touched && passwordsGroup.controls['password'].invalid"
-                    formControlName="password" type="password" name="password" id="password" placeholder="******">
+                    formControlName="password" type="password" name="password" id="password" placeholder="*****">
             </p>
             <ng-container
                 *ngIf="passwordsGroup.controls['password'].touched && passwordsGroup.controls['password'].invalid">
@@ -60,7 +60,7 @@
                 <label for="rePassword"><span><i class="fas fa-lock"></i></span></label>
                 <input
                     [class.input-error]="passwordsGroup.controls['rePassword'].touched && passwordsGroup.controls['rePassword'].invalid"
-                    formControlName="rePassword" type="password" name="rePassword" id="rePassword" placeholder="******">
+                    formControlName="rePassword" type="password" name="rePassword" id="rePassword" placeholder="*****">
             </p>
             <ng-container
                 *ngIf="passwordsGroup.controls['rePassword'].touched && passwordsGroup.controls['rePassword'].invalid">
@@ -77,7 +77,7 @@
         <button [disabled]="registerFormGroup.invalid">Create Account</button>
 
         <p class="text-center">
-            Have an account already?
+            Already registered?
             <a (click)="navigateToLogin()">Log In</a>
         </p>
 

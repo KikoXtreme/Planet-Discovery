@@ -6,7 +6,7 @@
   }
   
     .err {
-      color: #95c2de;
+      color:blue;
       font-family: 'Nunito Sans', sans-serif;
       font-size: 11rem;
       position:absolute;
@@ -19,11 +19,11 @@
     font-size: 8.5rem;
     left: 42%;
     top: 15%;
-    color: #95c2de;
+    color: blue;
   }
   
    .err2 {
-      color: #95c2de;
+      color: blue;
       font-family: 'Nunito Sans', sans-serif;
       font-size: 11rem;
       position:absolute;
@@ -43,7 +43,7 @@
   
   a {
     text-decoration: none;
-    color: #95c2de;
+    color: blue;
   }
   
   a:hover {
