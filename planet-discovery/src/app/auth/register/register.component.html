@@ -1,1 +1,85 @@
-<p>register works!</p>
+<form class="register" [formGroup]="registerFormGroup" (ngSubmit)="handleRegister()">
+
+    <fieldset>
+        <h2>Sigh Up</h2>
+
+        <!-- username -->
+        <p class="field field-icon">
+            <label for="username"><span><i class="fas fa-user-astronaut"></i></span></label>
+            <input formControlName="username"
+                [class.input-error]="registerFormGroup.controls['username'].touched && registerFormGroup.controls['username'].invalid"
+                type="text" name="username" id="username" placeholder="Johny">
+        </p>
+        <ng-container
+            *ngIf="registerFormGroup.controls['username'].touched && registerFormGroup.controls['username'].invalid">
+            <p *ngIf="registerFormGroup.controls['username'].errors['required']" class="error">
+                Username is required!
+            </p>
+            <p *ngIf="registerFormGroup.controls['username'].errors['minlength']" class="error">
+                Username must be at least 5 characters!
+            </p>
+        </ng-container>
+
+        <!-- email -->
+        <p class="field field-icon">
+            <label for="email"><span><i class="fas fa-at"></i></span></label>
+            <input formControlName="email"
+                [class.input-error]="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid"
+                type="email" name="email" id="email" placeholder="john.doe@gmail.com">
+        </p>
+        <ng-container
+            *ngIf="registerFormGroup.controls['email'].touched && registerFormGroup.controls['email'].invalid">
+            <p *ngIf="registerFormGroup.controls['email'].errors['required']" class="error">
+                Email is required!
+            </p>
+            <p *ngIf="registerFormGroup.controls['email'].errors['email']" class="error">
+                Email is not valid!
+            </p>
+        </ng-container>
+
+        <!-- password -->
+        <div formGroupName="passwords">
+            <p class="field field-icon">
+                <label for="password"><span><i class="fas fa-lock"></i></span></label>
+                <input
+                    [class.input-error]="passwordsGroup.controls['password'].touched && passwordsGroup.controls['password'].invalid"
+                    formControlName="password" type="password" name="password" id="password" placeholder="******">
+            </p>
+            <ng-container
+                *ngIf="passwordsGroup.controls['password'].touched && passwordsGroup.controls['password'].invalid">
+                <p *ngIf="passwordsGroup.controls['password'].errors['required']" class="error">
+                    Password is required!
+                </p>
+                <p *ngIf="passwordsGroup.controls['password'].errors['minlength']" class="error">
+                    Password must be at least 5 characters!
+                </p>
+            </ng-container>
+
+            <!-- rePassword -->
+            <p class="field field-icon">
+                <label for="rePassword"><span><i class="fas fa-lock"></i></span></label>
+                <input
+                    [class.input-error]="passwordsGroup.controls['rePassword'].touched && passwordsGroup.controls['rePassword'].invalid"
+                    formControlName="rePassword" type="password" name="rePassword" id="rePassword" placeholder="******">
+            </p>
+            <ng-container
+                *ngIf="passwordsGroup.controls['rePassword'].touched && passwordsGroup.controls['rePassword'].invalid">
+                <p class="error">Repeat Password does not match password!</p>
+            </ng-container>
+        </div>
+
+        <!-- telephone -->
+        <p class="field field-icon">
+            <label for="counry"><span><i class="fas fa-globe"></i></span></label>
+            <input formControlName="country" type="text" name="country" id="country" placeholder="Bulgaria (optional)">
+        </p>
+
+        <button [disabled]="registerFormGroup.invalid">Create Account</button>
+
+        <p class="text-center">
+            Have an account already?
+            <a (click)="navigateToLogin()">Log In</a>
+        </p>
+
+    </fieldset>
+</form>

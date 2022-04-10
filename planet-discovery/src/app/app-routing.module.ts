@@ -19,6 +19,10 @@ const routes: Routes = [
     component: AboutPageComponent,
   },
   {
+    path: 'user',
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
+  },
+  {
     path: 'planets',
     loadChildren: () => import('./feature/planets/planets.module').then(m => m.PlanetsModule),
   },

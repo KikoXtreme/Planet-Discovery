@@ -1,9 +1,9 @@
 import { IBase } from "./base";
 
 export interface IUser extends IBase {
-    themes: string[];
+    planets: string[];
     posts: string[];
-    tel: string;
+    country: string;
     email: string;
     username: string;
     password: string;

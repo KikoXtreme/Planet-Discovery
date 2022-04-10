@@ -4,9 +4,9 @@ import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { IUser } from '../core/interfaces';
 
-export interface CreateUserDto {
-  username: string, email: string, country?: string, password: string;
-}
+// export interface CreateUserData {
+//   username: string, email: string, country?: string, password: string;
+// }
 
 @Injectable({
   providedIn: 'root'

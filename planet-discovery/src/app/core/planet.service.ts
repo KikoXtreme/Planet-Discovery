@@ -13,7 +13,7 @@ export class PlanetService {
 
   constructor(private http: HttpClient) { }
 
-  addPlanet$(body: { plametName: string, postText: string }): Observable<IPlanet> {
+  addPlanet$(body: { planetName: string, postText: string }): Observable<IPlanet> {
     return this.http.post<IPlanet>(`${apiUrl}/planets`, body, { withCredentials: true });
   }
 
