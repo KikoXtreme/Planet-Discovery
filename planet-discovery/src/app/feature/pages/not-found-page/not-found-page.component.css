@@ -30,6 +30,15 @@
       left: 68%;
       top: 8%;
     }
+
+    .err3 {
+      color: blue;
+      font-family: 'Nunito Sans', sans-serif;
+      font-size: 11rem;
+      position:absolute;
+      left: 44%;
+      top: 8%;
+    }
   
   .msg {
       text-align: center;
@@ -39,6 +48,7 @@
       left: 16%;
       top: 45%;
       width: 75%;
+      color: white;
     }
   
   a {

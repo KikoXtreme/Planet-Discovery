@@ -18,6 +18,6 @@ import { RouterModule } from '@angular/router';
   exports: [
     HeaderComponent,
     FooterComponent
-  ]
+  ],
 })
 export class CoreModule { }

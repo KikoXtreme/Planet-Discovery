@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
       error: (err) => {
         this.errorMessage = err.error.message;
       }
-    })
+    });
   }
 
   navigateToRegister(): void {

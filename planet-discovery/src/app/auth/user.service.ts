@@ -12,7 +12,7 @@ import { IUser } from '../core/interfaces';
   providedIn: 'root'
 })
 export class UserService {
-
+  //TODO
   constructor(private httpClient: HttpClient) { }
 
   getProfile$(): Observable<IUser> {

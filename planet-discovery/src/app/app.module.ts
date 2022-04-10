@@ -20,7 +20,7 @@ import { PagesModule } from './feature/pages/pages.module';
     RouterModule,
     CoreModule,
     AppRoutingModule,
-    PagesModule
+    PagesModule,
   ],
   providers: [],
   bootstrap: [
