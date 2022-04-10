@@ -1,6 +1,7 @@
 body {
 margin: 0;
-background-color:rgba(30, 111, 232, 0.19);
+/* background-color:rgba(30, 111, 232, 0.19); */
+background: url(./stars.png) no-repeat center center fixed
 }
 
 .site {

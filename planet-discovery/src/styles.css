@@ -1,7 +1,28 @@
-@import url('./assets/reset.css');
 @import url('./assets/layout.css');
 @import url('./assets/typography.css');
 @import url('./assets/responsive.css');
+
+/*reset*/
+/*
+*Removes all default whitespace
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/*
+*Reset CSS model sizing calculations
+*/
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
 
 body {
     /* max-width: 1366px; */
@@ -12,12 +33,12 @@ body {
 }
 
 .container {
-    width: 90%;
+    width: 100%;
     margin: auto;
     padding-bottom: 4em;
     /* padding-top: 1em; */
     display: flex;
-    align-items: flex-start;
+    align-items:flex-start;
     justify-content: space-evenly;
 }
 
