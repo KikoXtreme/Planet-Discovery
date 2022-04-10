@@ -1,8 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { IPlanet } from './interfaces';
+import { IPlanet, IPost } from './interfaces';
 
 const apiUrl = environment.apiUrl;
 
@@ -11,10 +11,24 @@ const apiUrl = environment.apiUrl;
 })
 export class PlanetService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
   addPlanet$(body: { planetName: string, postText: string }): Observable<IPlanet> {
-    return this.http.post<IPlanet>(`${apiUrl}/planets`, body, { withCredentials: true });
+    return this.httpClient.post<IPlanet>(`${apiUrl}/planets`, body, { withCredentials: true });
   }
+
+  loadPlanetList$(searchValue: string = ''): Observable<IPlanet[]> {
+    return this.httpClient.get<IPlanet[]>(`${apiUrl}/themes?title=${searchValue}`, {
+      params: new HttpParams({
+        fromObject: {
+
+        }
+      })
+    });
+  }
+  
+  // loadPlanetById(): Observable<IPlanet<IPost>> {
+  //   return this.httpClient.get<IPlanet<IPost>>(`${apiUrl}/themes/${id}`);
+  // }
 
 }

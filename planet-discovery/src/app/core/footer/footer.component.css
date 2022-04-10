@@ -5,22 +5,25 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    max-width: 1366px;
+    /* max-width: 1366px; */
+    max-width: 1920px;
 }
 
 footer p {
     margin: 0;
     padding: 0;
-    font-size: 0.7em;
+    font-size: 0.8em;
     text-align: center;
     color: white;
+    font-style: normal;
 }
 
 footer span {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: white;
+    font-weight: normal;
 }
 
 footer span a {
-    color: lightgreen;
+    color: rgb(248, 228, 7);
 }

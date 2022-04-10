@@ -17,8 +17,8 @@
         <div class="mini-navbar" *ngIf="(isLoggedIn$ | async)">
             <ul>
                 <li>
-                    <a routerLink="/user/profile">Kiko's Profile</a>
-                    <!-- <a routerLink="/user/profile">{{(currentUser$ | async).username}}'s Profile</a> -->
+                    <!-- <a routerLink="/user/profile">Kiko's Profile</a> -->
+                    <a routerLink="/user/profile">{{(currentUser$ | async).username}}'s Profile</a>
                 </li>
                 <li>
                     <a href="javascript:void(0)" (click)="logoutHandler()">Logout</a>
@@ -44,9 +44,9 @@
                 <a routerLink="/planets/latest">Latest Discoveries</a>
             </li>
         </ul>
-        <!-- <p *ngIf="message" [ngClass]="{'error-message': isMessageError, 'success-message':!isMessageError }"
+        <p *ngIf="message" [ngClass]="{'error-message': isMessageError, 'success-message':!isMessageError }"
             class="notification">{{message}}
-        </p> -->
+        </p>
     </nav>
 
 </header>

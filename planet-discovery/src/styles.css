@@ -4,7 +4,8 @@
 @import url('./assets/responsive.css');
 
 body {
-    max-width: 1366px;
+    /* max-width: 1366px; */
+    max-width: 1920px;
     margin: auto;
     position: relative;
     min-height: 100vh;
@@ -13,7 +14,8 @@ body {
 .container {
     width: 90%;
     margin: auto;
-    padding-bottom: 4.5em;
+    padding-bottom: 4em;
+    /* padding-top: 1em; */
     display: flex;
     align-items: flex-start;
     justify-content: space-evenly;

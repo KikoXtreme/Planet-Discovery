@@ -11,7 +11,7 @@ export class AuthService {
 
   private _currentUser = new BehaviorSubject<IUser>(undefined);
   currentUser$ = this._currentUser.asObservable();
-  isLoggedIn$ = this._currentUser.pipe(map(user => !!user));
+  isLoggedIn$ = this.currentUser$.pipe(map(user => !!user));
 
   constructor(private httpClient: HttpClient) { }
 
@@ -20,10 +20,13 @@ export class AuthService {
   }
 
   login$(userData: { email: string, password: string }): Observable<IUser> {
+    console.log(userData)
+    // console.log(response.body)
     return this.httpClient
       .post<IUser>(`${environment.apiUrl}/login`, userData, { withCredentials: true, observe: 'response' })
-      .pipe(map(response => response.body))
+      .pipe(map(response => response.body));
   }
+
 
   logout$(): Observable<void> {
     return this.httpClient.post<void>(`${environment.apiUrl}/logout`, {}, { withCredentials: true });

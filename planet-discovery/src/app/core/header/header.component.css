@@ -7,7 +7,7 @@ header ul {
     padding: 0;
     display: flex;
     align-items: center;
-    width: 75%;
+    width: 50%;
     margin: auto;
 }
   
@@ -36,17 +36,18 @@ header a {
 }
   
 nav {
-    border-top: 1px solid white;
+    border-top: 3px solid white;
 }
   
 .logo {
     font-size: 1.5em;
     color: white;
     padding-bottom: 0;
+    font-style: normal;   
 }
   
 .logo-wrap {
-    font-family: 'Parisienne', cursive;
+    font-family:'Courier New', Courier, monospace;
     letter-spacing: .5em;
     margin: 0.5em 0;
 }
@@ -63,7 +64,7 @@ nav {
   /* mini-navbar */
   
 .mini-navbar ul {
-    background-color: rgba(255, 255, 0, 0.219);
+    background: linear-gradient(0deg, rgb(233, 239, 234) 0%, rgb(99, 169, 200) 35%, rgb(165, 165, 10) 100%);
     border-radius: 60px;
 }
   

@@ -1,0 +1,26 @@
+<div class="planet-container">
+    <div class="planet-name-wrapper">
+        <div class="planet-name">
+            <a [routerLink]="['/planets', planet._id]" class="normal">
+                <h2 *ngIf="planet.planetName.length > 25">{{(planet.planetName | slice:0:25) + '...'}}</h2>
+                <h2 *ngIf="planet.planetName.length <= 25">{{planet.planetName}}</h2>
+            </a>
+            <div class="columns">
+                <div>
+                    <p>Date: <time>{{planet.created_at | date: 'medium'}}</time></p>
+                    <div class="nick-name">
+                        <p>Username: <span>{{planet.userId.username}}</span></p>
+                    </div>
+                </div>
+                <div class="subscribers">
+                    <button *ngIf="(isLoggedIn$ |async)" [class.subscribe]="canSubscribe"
+                        [class.unsubscribe]="!canSubscribe">
+                        {{canSubscribe ? 'Subscribe' : 'Unsubscribe'}}
+                    </button>
+                    <p>Subscribers: <span>{{planet.subscribers.length}}</span></p>
+                </div>
+            </div>
+        </div>
+        <!-- <app-post-list [planetId]="planet._id"></app-post-list> -->
+    </div>
+</div>

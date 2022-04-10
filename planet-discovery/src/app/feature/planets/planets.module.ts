@@ -5,13 +5,17 @@ import { PlanetsRoutingModule } from './planets-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PlanetsPageComponent } from './planets-page/planets-page.component';
 import { PagesModule } from '../pages/pages.module';
+import { PlanetsListComponent } from './planets-list/planets-list.component';
+import { PlanetsListItemComponent } from './planets-list-item/planets-list-item.component';
 
 
 
 @NgModule({
   declarations: [
     PlanetsNewPageComponent,
-    PlanetsPageComponent
+    PlanetsPageComponent,
+    PlanetsListComponent,
+    PlanetsListItemComponent
   ],
   imports: [
     CommonModule,
