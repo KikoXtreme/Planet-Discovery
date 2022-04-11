@@ -1,0 +1,27 @@
+.loading {
+    color: white;
+}
+
+.planets-no {
+    color: white;
+    font-size: 18px;
+    margin-top: 2em;
+    font-weight: bold;
+}
+
+div {
+    width: 600px;
+    margin: 1em;
+}
+
+.latest {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+.latest1 {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}

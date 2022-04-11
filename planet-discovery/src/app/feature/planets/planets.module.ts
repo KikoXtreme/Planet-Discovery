@@ -8,6 +8,7 @@ import { PagesModule } from '../pages/pages.module';
 import { PlanetsListComponent } from './planets-list/planets-list.component';
 import { PlanetsListItemComponent } from './planets-list-item/planets-list-item.component';
 import { PlanetsDetailsComponent } from './planets-details/planets-details.component';
+import { PlanetsLatestComponent } from './planets-latest/planets-latest.component';
 
 
 
@@ -17,7 +18,8 @@ import { PlanetsDetailsComponent } from './planets-details/planets-details.compo
     PlanetsPageComponent,
     PlanetsListComponent,
     PlanetsListItemComponent,
-    PlanetsDetailsComponent
+    PlanetsDetailsComponent,
+    PlanetsLatestComponent
 
   ],
   imports: [

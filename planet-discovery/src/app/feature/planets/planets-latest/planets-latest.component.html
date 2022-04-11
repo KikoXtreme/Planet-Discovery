@@ -1,0 +1,14 @@
+<div class="latest">
+    Time since the latest discovery
+</div>
+<div class="latest1">
+    The last 3 discovered planets.
+</div>
+
+<div *ngIf="planetList">
+    <app-planets-list-item *ngFor="let planet of planetList | slice:0:3" [planet]="planet"></app-planets-list-item>
+    <div *ngIf="planetList.length === 0" class="planets-no">No planets!</div>
+</div>
+<div *ngIf="!planetList" class="loading">
+    Loading...
+</div>
