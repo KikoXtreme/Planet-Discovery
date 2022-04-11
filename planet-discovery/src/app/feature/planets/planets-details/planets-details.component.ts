@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
-import { IPlanet, IPost } from 'src/app/core/interfaces';
+import { IPlanet, IPost, IUser } from 'src/app/core/interfaces';
 import { PlanetService } from 'src/app/core/planet.service';
 
 @Component({
@@ -15,6 +15,7 @@ export class PlanetsDetailsComponent implements OnInit {
 
   canSubscribe: boolean = false;
   isLoggedIn$: Observable<boolean> = this.authService.isLoggedIn$;
+  currentUser$: Observable<IUser> = this.authService.currentUser$;
 
   constructor(private activatedRoute: ActivatedRoute, private planetService: PlanetService, private authService: AuthService) { }
 

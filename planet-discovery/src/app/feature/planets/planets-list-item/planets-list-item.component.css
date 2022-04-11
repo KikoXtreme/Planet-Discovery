@@ -1,3 +1,9 @@
+/* .planet-container {
+    display: inline-block;
+    flex-direction: column;
+    width: 600px;
+} */
+
 .planet-container a {
     text-decoration: none;
     color: inherit;
@@ -7,7 +13,8 @@
     font-weight: bold;
 }
 
-.planet-container h2, p {
+.planet-container h2,
+p {
     padding: 0.3em 0 0.2em;
     margin: 0;
     color: white;
@@ -18,10 +25,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 0.3em 0.5em;
-    border: 1px solid #999;
-    border-radius: 0.3em;
     font-size: 0.8em;
-    margin-top: 1em;
+    margin-top: 2em;
+    box-shadow: 0 0 3em 0 rgb(255, 255, 255);
+    border-radius: 1.5em;
+    border: .1em solid rgb(255, 255, 255);
 }
 
 .planet-title {
@@ -29,7 +37,7 @@
 }
 
 .planet-name {
-    width: 100%;
+    width: 1200px;
 }
 
 .columns {
@@ -45,19 +53,20 @@
 
 .subscribers button {
     padding: 0.2rem 0.5rem;
-    border: none;
-    border-radius: 0.3rem;
     color: white;
     cursor: pointer;
     width: 100%;
+    box-shadow: 0 0 3em 0 rgba(255, 255, 255, 0.5);
+    border-radius: 1.5em;
+    border: .1em solid rgb(255, 255, 255);
 }
 
 .subscribe {
-    background-color: green;
+    background-color: rgba(0, 128, 0, 0.8);
 }
 
 .unsubscribe {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.8);
 }
 
 time {

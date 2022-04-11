@@ -1,31 +1,25 @@
-:host {
-    width: 100%;
-}
-/* planet content  */
-
 .planet-content {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 600px;
 }
 
 /* planet title  */
-
-/* planet title  */
-
 .planet-name-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0.3em 0.5em;
-    border: 1px solid #999;
-    border-radius: 0.3em;
     font-size: 0.8em;
     margin-top: 1em;
+    box-shadow: 0 0 3em 0 rgb(255, 255, 255);
+    border-radius: 1.5em;
+    border: .1em solid rgb(255, 255, 255);
 }
 
 .planet-title {
     padding: 0;
+    color: white;
 }
 
 .planet-name {
@@ -45,19 +39,20 @@
 
 .subscribers button {
     padding: 0.2rem 0.5rem;
-    border: none;
-    border-radius: 0.3rem;
     color: white;
     cursor: pointer;
     width: 100%;
+    box-shadow: 0 0 3em 0 rgba(255, 255, 255, 0.5);
+    border-radius: 1.5em;
+    border: .1em solid rgb(255, 255, 255);
 }
 
 .subscribe {
-    background-color: green;
+    background-color: rgba(0, 128, 0, 0.8);
 }
 
 .unsubscribe {
-    background-color: red;
+    background-color: rgba(255, 0, 0, 0.8);
 }
 
 .planet-title {
@@ -77,26 +72,28 @@
 }
 
 /* comment  */
-
 .comment {
     margin-top: 1em;
-    border: 1px solid;
-    border-radius: 0.3em;
     width: 100%;
     padding: 1em;
+    box-shadow: 0 0 3em 0 rgb(255, 255, 255);
+    border-radius: 1.5em;
+    border: .1em solid rgb(255, 255, 255);
 }
 
 .comment header p {
     padding: 0.3em;
     text-align: center;
-    background-color: #ffffff;
-    border-bottom: 1px dashed;
+    background-color: #ffffffc2;
     margin-right: 0;
+    border-radius: 1.5em;
+    border: .1em solid rgb(255, 255, 255);
 }
 
 .comment-main {
     margin: 1em;
     display: flex;
+    color: whitesmoke;
 }
 
 .userdetails {
@@ -127,6 +124,9 @@
     width: 5em;
     height: 5em;
     border: 1px solid;
+    /* box-shadow: 0 0 3em 0 rgb(255, 255, 255); */
+    /* border-radius: 0.5em; */
+    /* border: .1em solid rgb(255, 255, 255); */
 }
 
 .footer {
@@ -135,11 +135,11 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    color: rgb(0, 128, 182);
+    color: white;
 }
 
 .footer i {
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
     border: none;
     cursor: pointer;
 }
@@ -149,15 +149,14 @@
 }
 
 .footer .fas.fa-thumbs-up {
-    color: green;
+    color: rgba(0, 128, 0, 0.8);
 }
 
 .footer .fas.fa-thumbs-down {
-    color: red;
+    color: rgba(255, 0, 0, 0.8);
 }
 
 /* answer-comment */
-
 .answer-comment {
     width: 100%;
     /* display: flex; */
@@ -167,32 +166,36 @@
 .answer-comment p {
     flex-basis: 15%;
     padding-bottom: 0.3em;
+    color: white;
 }
 
-.answer-comment p span {
-    color: rgb(0, 128, 182);
-    font-size: 1.2em;
-}
 
 .answer {
     border: 1px solid;
     border-radius: 0.3em;
     flex-basis: 85%;
     text-align: center;
+    /* box-shadow: 0 0 3em 0 rgb(255, 255, 255);
+    border-radius: 1.5em;
+    border: .1em solid rgb(255, 255, 255); */
 }
 
 .answer textarea {
-    width: 90%;
+    width: 100%;
     margin-top: 1rem;
-    border-radius: 0.5rem;
+    box-shadow: 0 0 3em 0 rgb(255, 255, 255);
+    border-radius: 1.5em;
+    border: .1em solid rgb(255, 255, 255);
 }
 
 .answer button {
     color: white;
     margin: 0.5em 1em;
     padding: 0.2em 1em;
-    border: 1px solid;
-    border-radius: 0.3em;
+    box-shadow: 0 0 3em 0 rgb(255, 255, 255);
+    border-radius: 1.5em;
+    border: .1em solid rgb(255, 255, 255);
+    background: linear-gradient(0deg, rgb(12, 0, 182) 0%, rgb(99, 169, 200) 35%, rgb(1, 17, 20) 100%);
 }
 
 .answer button:hover {

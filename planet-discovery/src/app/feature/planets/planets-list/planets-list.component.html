@@ -5,8 +5,8 @@
 <div *ngIf="planetList">
     <app-planets-list-item *ngFor="let planet of planetList" [planet]="planet"></app-planets-list-item>
     <!-- <app-planet-list-item *ngFor="let planet of planetList | slice:0:3" [planet]="planet"></app-planet-list-item> -->
-    <div *ngIf="planetList.length === 0">No planets!</div>
+    <div *ngIf="planetList.length === 0" class="planets-no">No planets!</div>
 </div>
-<div *ngIf="!planetList">
+<div *ngIf="!planetList" class="loading">
     Loading...
 </div>
