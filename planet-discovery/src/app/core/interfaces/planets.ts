@@ -3,17 +3,17 @@ import { IBase } from "./base";
 import { IUser } from "./user";
 
 // Option 1
-// export interface ITheme extends IBase {
+// export interface IPlanet extends IBase {
 //     subscribers: string[];
 //     posts: string[];
-//     themeName: string;
+//     planetName: string;
 //     userId: IUser;
 // }
 
-// export interface IThemeWithPost extends IBase {
+// export interface IPlanetWithPost extends IBase {
 //     subscribers: string[];
 //     posts: IPost[];
-//     themeName: string;
+//     planetName: string;
 //     userId: IUser;
 // }
 
@@ -26,9 +26,9 @@ export interface IPlanet<T = string> extends IBase {
 }
 
 // Option 3
-// export interface ITheme extends IBase {
+// export interface IPlanet extends IBase {
 //     subscribers: string[];
 //     posts: (string | IPost)[];
-//     themeName: string;
+//     planetName: string;
 //     userId: IUser;
 // }

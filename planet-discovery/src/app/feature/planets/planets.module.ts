@@ -7,6 +7,7 @@ import { PlanetsPageComponent } from './planets-page/planets-page.component';
 import { PagesModule } from '../pages/pages.module';
 import { PlanetsListComponent } from './planets-list/planets-list.component';
 import { PlanetsListItemComponent } from './planets-list-item/planets-list-item.component';
+import { PlanetsDetailsComponent } from './planets-details/planets-details.component';
 
 
 
@@ -15,7 +16,9 @@ import { PlanetsListItemComponent } from './planets-list-item/planets-list-item.
     PlanetsNewPageComponent,
     PlanetsPageComponent,
     PlanetsListComponent,
-    PlanetsListItemComponent
+    PlanetsListItemComponent,
+    PlanetsDetailsComponent
+
   ],
   imports: [
     CommonModule,

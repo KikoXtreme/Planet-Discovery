@@ -6,9 +6,7 @@ import { IPlanet, IPost } from './interfaces';
 
 const apiUrl = environment.apiUrl;
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PlanetService {
 
   constructor(private httpClient: HttpClient) { }
@@ -18,7 +16,7 @@ export class PlanetService {
   }
 
   loadPlanetList$(searchValue: string = ''): Observable<IPlanet[]> {
-    return this.httpClient.get<IPlanet[]>(`${apiUrl}/themes?title=${searchValue}`, {
+    return this.httpClient.get<IPlanet[]>(`${apiUrl}/planets?title=${searchValue}`, {
       params: new HttpParams({
         fromObject: {
 
@@ -26,9 +24,9 @@ export class PlanetService {
       })
     });
   }
-  
-  // loadPlanetById(): Observable<IPlanet<IPost>> {
-  //   return this.httpClient.get<IPlanet<IPost>>(`${apiUrl}/themes/${id}`);
-  // }
+
+  loadPlanetById(id: string): Observable<IPlanet<IPost>> {
+    return this.httpClient.get<IPlanet<IPost>>(`${apiUrl}/planets/${id}`);
+  }
 
 }

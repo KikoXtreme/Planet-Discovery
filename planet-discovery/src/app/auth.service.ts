@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, EMPTY, map, Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { CreateUserData, IUser } from '../core/interfaces';
+import { CreateUserData, IUser } from './core/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -20,18 +20,16 @@ export class AuthService {
   }
 
   login$(userData: { email: string, password: string }): Observable<IUser> {
-    console.log(userData)
-    // console.log(response.body)
     return this.httpClient
       .post<IUser>(`${environment.apiUrl}/login`, userData, { withCredentials: true, observe: 'response' })
       .pipe(map(response => response.body));
   }
 
-
   logout$(): Observable<void> {
     return this.httpClient.post<void>(`${environment.apiUrl}/logout`, {}, { withCredentials: true });
   }
 
+  //TODO /user/profile???
   authenticate$(): Observable<IUser> {
     return this.httpClient
       .get<IUser>(`${environment.apiUrl}/users/profile`, { withCredentials: true })

@@ -1,8 +1,8 @@
 import { RouterModule, Routes } from "@angular/router";
+import { GuardsGuard } from "src/app/core/guards/guards.guard";
+import { PlanetsDetailsComponent } from "./planets-details/planets-details.component";
 import { PlanetsNewPageComponent } from "./planets-new-page/planets-new-page.component";
 import { PlanetsPageComponent } from "./planets-page/planets-page.component";
-// import { AuthGuard } from "src/app/core/guards/auth.guard";
-// import { ThemesDetailPageComponent } from "./themes-detail-page/themes-detail-page.component";
 
 const routes: Routes = [
     {
@@ -12,13 +12,13 @@ const routes: Routes = [
     },
     {
         path: 'new',
-        // canActivate: [AuthGuard], 
+        canActivate: [GuardsGuard], 
         component: PlanetsNewPageComponent
     },
-    // {
-    //     path: ':themeId',
-    //     component: ThemesDetailPageComponent
-    // }
+    {
+        path: ':planetId',
+        component: PlanetsDetailsComponent
+    }
 ];
 
 export const PlanetsRoutingModule = RouterModule.forChild(routes);

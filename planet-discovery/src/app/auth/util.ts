@@ -6,12 +6,24 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
     if (!value) {
         return null
     }
-    if (!/.{6,}@gmail\.(bg|com)/.test(value)) {
+    if (!/.{6,}@gmail\.(bg|com)$/.test(value)) {
         return {
             email: true,
         }
     }
     return null;
+}
+
+export function passwordMatch(passwordFormControl: AbstractControl) {
+    const validtorFn: ValidatorFn = (rePasswordFormControl: AbstractControl) => {
+        if (passwordFormControl.value !== rePasswordFormControl.value) {
+            return {
+                passwordMissmatch: true
+            }
+        }
+        return null;
+    }
+    return validtorFn;
 }
 // export function passwordMatch(passwordFormControl: AbstractControl): ValidationErrors | null {
 //     const passwordGroup = passwordFormControl.parent as FormGroup;
@@ -29,15 +41,3 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
 //     }
 //     return null;
 // }
-
-export function passwordMatch(passwordFormControl: AbstractControl) {
-    const validtorFn: ValidatorFn = (rePasswordFormControl: AbstractControl) => {
-        if (passwordFormControl.value !== rePasswordFormControl.value) {
-            return {
-                passwordMissmatch: true
-            }
-        }
-        return null;
-    }
-    return validtorFn;
-}

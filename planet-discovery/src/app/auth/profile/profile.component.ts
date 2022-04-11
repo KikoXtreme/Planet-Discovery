@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { IUser } from 'src/app/core/interfaces';
-import { UserService } from '../user.service';
+import { UserService } from 'src/app/core/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -23,7 +23,7 @@ export class ProfileComponent implements OnInit {
       next: (user) => {
         this.currentUser = user;
       },
-      error: (err) => {
+      error: () => {
         this.router.navigate(['/home']);
       }
     })

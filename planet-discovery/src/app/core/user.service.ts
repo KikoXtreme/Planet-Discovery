@@ -8,13 +8,11 @@ import { IUser } from '../core/interfaces';
 //   username: string, email: string, country?: string, password: string;
 // }
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UserService {
-  //TODO
+  
   constructor(private httpClient: HttpClient) { }
-
+  //TODO /user/profile ???
   getProfile$(): Observable<IUser> {
     return this.httpClient.get<IUser>(`${environment.apiUrl}/users/profile`, { withCredentials: true });
   }

@@ -1,0 +1,57 @@
+<div *ngIf="planet; else loadingIndicator" class="planet-content">
+    <!-- planet-title  -->
+    <div class="planet-title">
+        <div class="planet-name-wrapper">
+            <div class="planet-name">
+                <h2>{{planet.planetName}}</h2>
+                <p>Date: <time>{{planet.created_at}}</time></p>
+                <!-- <p>Date: <time>{{planet.created_at | date: 'medium'}}</time></p> -->
+            </div>
+            <div class="subscribers">
+                <p>Subscribers: <span>{{planet.subscribers.length}}</span></p>
+                <ng-container *ngIf="(isLoggedIn$ | async)">
+                    <button *ngIf="canSubscribe" class="subscribe">Subscribe</button>
+                    <button *ngIf="!canSubscribe" class="unsubscribe">Unsubscribe</button>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <!-- comment  -->
+    <div class="comment" *ngFor="let comment of planet.posts">
+        <header class="header">
+            <p><span>{{comment.userId.username}}</span> posted on <time>{{comment.created_at}}</time></p>
+            <!-- <p><span>{{comment.userId.username}}</span> posted on <time>{{comment.created_at  | date: 'medium'}}</time></p> -->
+        </header>
+        <div class="comment-main">
+            <div class="userdetails">
+                <img src="/assets/profile.png" alt="avatar">
+            </div>
+            <div class="post-content">
+                <p>{{comment.text}}</p>
+            </div>
+        </div>
+        <div class="footer">
+            <i *ngIf="(isLoggedIn$ | async) && canLike(comment)" class="fas fa-thumbs-up"></i>
+            <i *ngIf="(isLoggedIn$ | async) && !canLike(comment)" class="fas fa-thumbs-down"></i>
+            <p><span>{{comment.likes.length}}</span> likes</p>
+        </div>
+    </div>
+    <div *ngIf="(isLoggedIn$ | async)" class="answer-comment">
+        <p><span>currentUser</span> comment:</p>
+        <div class="answer">
+            <form>
+                <textarea name="postText" id="comment" cols="30" rows="10"></textarea>
+                <button>Post</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+<ng-template #loadingIndicator>
+    Loading...
+</ng-template>
+
+<!-- <div *ngIf="!planet">
+    Loading...
+</div> -->

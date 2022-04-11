@@ -2,6 +2,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
+import { GuardsGuard } from '../core/guards/guards.guard';
 
 const routes: Routes = [
   {
@@ -15,7 +16,7 @@ const routes: Routes = [
   {
     path: 'profile',
     // TODO add auth guard
-    // canActivate: [AuthGuard],
+    canActivate: [GuardsGuard],
     component: ProfileComponent
   },
 ]
