@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
+import { MessageBusService, MessageType } from 'src/app/core/message.service';
 import { emailValidator } from '../util';
 
 @Component({
@@ -12,7 +13,7 @@ import { emailValidator } from '../util';
 export class LoginComponent implements OnInit {
   errorMessage: string = '';
 
-  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private messageBus: MessageBusService) { }
 
   loginFormGroup: FormGroup = this.formBuilder.group({
     // 'email': new FormControl(null, [Validators.required, emailValidator]),
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
       },
       complete: () => {
         console.log('Login Completed!')
+        this.messageBus.notifyForMessage({ text: 'User successfully logged in!', type: MessageType.Success })
       },
       error: (err) => {
         this.errorMessage = err.error.message;

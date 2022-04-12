@@ -1,4 +1,5 @@
 import { Component, Input, OnChanges } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
 import { IPlanet } from 'src/app/core/interfaces';
@@ -15,7 +16,7 @@ export class PlanetsListItemComponent implements OnChanges {
 
   @Input() planet: IPlanet;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, public router: Router) { }
 
   ngOnChanges(): void {
     // TODO user currentUser$

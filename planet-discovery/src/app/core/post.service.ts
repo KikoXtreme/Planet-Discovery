@@ -6,9 +6,7 @@ import { IPost } from './interfaces';
 
 const apiUrl = environment.apiUrl;
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PostService {
 
   constructor(private httpClient: HttpClient) { }

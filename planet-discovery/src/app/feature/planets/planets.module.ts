@@ -9,6 +9,8 @@ import { PlanetsListComponent } from './planets-list/planets-list.component';
 import { PlanetsListItemComponent } from './planets-list-item/planets-list-item.component';
 import { PlanetsDetailsComponent } from './planets-details/planets-details.component';
 import { PlanetsLatestComponent } from './planets-latest/planets-latest.component';
+import { PostsComponent } from './posts/posts.component';
+import { TimePipe } from './time.pipe';
 
 
 
@@ -19,7 +21,9 @@ import { PlanetsLatestComponent } from './planets-latest/planets-latest.componen
     PlanetsListComponent,
     PlanetsListItemComponent,
     PlanetsDetailsComponent,
-    PlanetsLatestComponent
+    PlanetsLatestComponent,
+    PostsComponent,
+    TimePipe
 
   ],
   imports: [
@@ -28,6 +32,11 @@ import { PlanetsLatestComponent } from './planets-latest/planets-latest.componen
     PlanetsRoutingModule,
     FormsModule,
     ReactiveFormsModule
+  ],
+  exports: [
+    PlanetsListComponent,
+    PlanetsListItemComponent,
+    PostsComponent
   ]
 })
 export class PlanetsModule { }

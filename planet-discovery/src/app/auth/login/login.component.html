@@ -8,7 +8,7 @@
             <label for="email"><span><i class="fas fa-at"></i></span></label>
             <input formControlName="email"
                 [class.input-error]="loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid"
-                type="email" name="email" id="email" placeholder="kiril.valkov@gmail.com">
+                type="email" name="email" id="email" placeholder="kiril.valkov@yahoo.com">
         </p>
         <ng-container *ngIf="loginFormGroup.controls['email'].touched && loginFormGroup.controls['email'].invalid">
             <p *ngIf="loginFormGroup.controls['email'].errors['required']" class="error">

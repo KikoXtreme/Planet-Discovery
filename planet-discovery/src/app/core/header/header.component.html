@@ -26,7 +26,7 @@
             </ul>
         </div>
     </div>
-    <nav>
+    <nav class="nav">
         <ul>
             <li>
                 <a routerLink="/home">Home</a>
@@ -40,13 +40,15 @@
             <li>
                 <a routerLink="/planets/new">New Discovery</a>
             </li>
-            <li>
+            <li *ngIf="(isLoggedIn$ | async)">
                 <a routerLink="/planets/latest">Latest Discoveries</a>
             </li>
+            <li>
+                <p *ngIf="message" [ngClass]="{'error-message': isMessageError, 'success-message':!isMessageError }"
+                    class="notification">{{message}}
+                </p>
+            </li>
         </ul>
-        <p *ngIf="message" [ngClass]="{'error-message': isMessageError, 'success-message':!isMessageError }"
-            class="notification">{{message}}
-        </p>
     </nav>
 
 </header>

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { IPlanet } from 'src/app/core/interfaces';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IPlanet, IPost } from 'src/app/core/interfaces';
 import { PlanetService } from 'src/app/core/planet.service';
 
 @Component({
@@ -9,14 +10,15 @@ import { PlanetService } from 'src/app/core/planet.service';
 })
 export class PlanetsLatestComponent implements OnInit {
 
+  @Input() planet: IPlanet;
   planetList: IPlanet[];
 
-  constructor(private planetService: PlanetService) { }
+  constructor(private planetService: PlanetService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.planetService.loadPlanetList$()
       .subscribe(planetList => {
-        this.planetList = planetList;
+        this.planetList = planetList.reverse();
       });
   }
 

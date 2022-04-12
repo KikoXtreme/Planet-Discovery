@@ -7,8 +7,10 @@ header ul {
     padding: 3px;;
     display: flex;
     align-items: center;
-    width: 50%;
-    margin: auto;
+    /* width: 50%; */
+    /* margin: auto; */
+    width: fit-content ;
+    margin: 0 auto;
 }
   
 header ul span {
@@ -76,22 +78,21 @@ nav {
 .notification{
     position: fixed;
     z-index: 10;
-    right: 8%;
-    top: 8%;
+    /* right: 5%; */
+    top: 12%;
     padding: 0.5rem;
-    border-radius: 0.5rem;
-    color: rgb(255, 255, 255);
-    font-style: italic;
+    border-radius: 1.5rem;
+    color:white;
     /* text-decoration: underline; */
     box-shadow: 0 5px 10px rgb(204, 204, 204);
-    background-color: rgba(238, 74, 74, 0.699);
+    background-color: rgba(238, 74, 74, 0.8);
   }
   
   .error-message {
-      background-color: rgba(238, 74, 74, 0.699);
+      background-color: rgba(238, 74, 74, 0.8);
   }
   
   .success-message {
-      background-color: rgba(99, 230, 81, 0.699);
+      background-color: rgba(99, 230, 81, 0.8);
   }
   
