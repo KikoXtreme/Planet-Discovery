@@ -48,7 +48,10 @@
 </div>
 
 <ng-template #loadingIndicator>
-    Loading...
+    <mat-spinner style="margin:0 auto;" color="warn"></mat-spinner>
+    <div class="loading">
+        Loading...
+    </div>
 </ng-template>
 
 <!-- <div *ngIf="!planet">

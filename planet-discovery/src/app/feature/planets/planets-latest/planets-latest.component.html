@@ -8,10 +8,11 @@
 </div>
 
 <div *ngIf="planetList">
-    
+
     <app-planets-list-item *ngFor="let planet of planetList | slice:0:3" [planet]="planet"></app-planets-list-item>
     <div *ngIf="planetList.length === 0" class="planets-no">No planets!</div>
 </div>
 <div *ngIf="!planetList" class="loading">
+    <mat-spinner style="margin:0 auto;" color="warn"></mat-spinner>
     Loading...
 </div>

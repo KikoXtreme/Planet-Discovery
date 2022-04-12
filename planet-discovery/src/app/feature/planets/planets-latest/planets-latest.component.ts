@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IPlanet, IPost } from 'src/app/core/interfaces';
+import { IPlanet } from 'src/app/core/interfaces';
 import { PlanetService } from 'src/app/core/planet.service';
+
 
 @Component({
   selector: 'app-planets-latest',

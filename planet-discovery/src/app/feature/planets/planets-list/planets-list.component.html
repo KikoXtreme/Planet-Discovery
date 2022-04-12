@@ -8,5 +8,6 @@
     <div *ngIf="planetList.length === 0" class="planets-no">No planets!</div>
 </div>
 <div *ngIf="!planetList" class="loading">
+    <mat-spinner style="margin:0 auto;" color="warn"></mat-spinner>
     Loading...
 </div>

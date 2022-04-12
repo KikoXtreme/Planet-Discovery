@@ -1,3 +1,4 @@
+
 .planet-content {
     display: flex;
     flex-direction: column;
@@ -210,4 +211,10 @@
 
 .comment-area {
     min-width: 100%
+}
+
+.loading {
+    color: white;
+    text-align: center;
+    font-weight: bold;
 }

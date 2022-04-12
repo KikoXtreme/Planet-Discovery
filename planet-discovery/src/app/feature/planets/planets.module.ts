@@ -11,6 +11,7 @@ import { PlanetsDetailsComponent } from './planets-details/planets-details.compo
 import { PlanetsLatestComponent } from './planets-latest/planets-latest.component';
 import { PostsComponent } from './posts/posts.component';
 import { TimePipe } from './time.pipe';
+import { MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 
@@ -31,7 +32,8 @@ import { TimePipe } from './time.pipe';
     PagesModule,
     PlanetsRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     PlanetsListComponent,
