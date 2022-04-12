@@ -41,14 +41,14 @@ p {
 }
 
 
-.planet-name-latest h2{
+.planet-name-latest h2 {
     font-size: 30px;
     font-style: italic;
     font-weight: bold;
     text-decoration: underline;
 }
 
-.planet-name-latest p{
+.planet-name-latest p {
     font-size: 20px;
     text-align: center;
     padding: 1em;

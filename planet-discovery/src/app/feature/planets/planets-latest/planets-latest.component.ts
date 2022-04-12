@@ -11,8 +11,8 @@ import { PlanetService } from 'src/app/core/planet.service';
 })
 export class PlanetsLatestComponent implements OnInit {
 
-  @Input() planet: IPlanet;
-  planetList: IPlanet[];
+  planetList!: IPlanet[];
+  index: number = 0;
 
   constructor(private planetService: PlanetService, private activatedRoute: ActivatedRoute) { }
 
@@ -20,6 +20,7 @@ export class PlanetsLatestComponent implements OnInit {
     this.planetService.loadPlanetList$()
       .subscribe(planetList => {
         this.planetList = planetList.reverse();
+        console.log(planetList[0].created_at)
       });
   }
 

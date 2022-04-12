@@ -21,6 +21,11 @@ div {
     font-size: 30px;
 }
 
+div p {
+    font-weight: bold;
+    text-decoration: underline dotted greenyellow;
+}
+
 .latest1 {
     text-align: center;
     color: white;
