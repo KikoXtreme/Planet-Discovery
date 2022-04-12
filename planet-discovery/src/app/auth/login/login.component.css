@@ -70,8 +70,6 @@ form.login{
     padding-bottom: 0;
 }
 
-/* errors  */
-
 p.error {
     text-align: left;
     border-radius: 0.3em;

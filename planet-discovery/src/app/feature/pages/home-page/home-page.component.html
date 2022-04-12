@@ -1,4 +1,4 @@
-<div class="welcome">
+<div class="welcome" *ngIf="!(router.url === '/planets/latest')">
     <h3>Space, the final frontier... Where no man has gone before</h3>
     <p>
         The successes of discovering exoplanets in recent decades seem to be telling us that the galaxy is abundant with
