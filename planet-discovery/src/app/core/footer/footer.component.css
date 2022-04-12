@@ -19,11 +19,15 @@ footer p {
 }
 
 footer span {
-    font-size: 1.2em;
+    font-size: 1em;
     color: white;
     font-weight: normal;
 }
 
 footer span a {
     color: rgb(248, 228, 7);
+}
+
+footer span a:hover {
+    color: rgb(194, 100, 63);
 }
