@@ -39,7 +39,7 @@
                 </div>
                 <div class="flex">
                     <p>Profile picture: </p>
-                    <!-- <input type="file" accept="image/png" id="profile-picture" (change)="profilePictureChange($event)"> -->
+                    <input type="file" accept="image/png" id="profile-picture" (change)="profilePictureChange($event)">
                 </div>
                 <button type="button" (click)="isEdited = false" class="red-button">Cancel</button>
                 <button [disabled]="editProfileForm.invalid" class="green-button">Save</button>
