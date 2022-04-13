@@ -86,3 +86,15 @@ p {
 time {
     font-weight: bold;
 }
+
+.nick-name-latest p {
+    /* display: block; */
+    text-align: left;
+    color: white;
+}
+.nick-name-latest p span{
+    /* display: block; */
+    float: left;
+    /* clear: left; */
+    /* display:inline */
+}

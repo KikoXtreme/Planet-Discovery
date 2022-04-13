@@ -45,33 +45,20 @@ export class ProfileComponent implements OnInit {
 
   }
 
-  updateProfile(): void {
-    // TODO continue
-    console.log(this.editProfileForm.value);
-    console.log(this.currentUser);
-    this.isEdited = false;
-
-
-    this.userService.updateProfile$(this.currentUser, this.editProfileForm.value).pipe(first()).subscribe({
-      next: (user) => {
-        this.currentUser = user;
+  updateProfile(editProfileForm: NgForm): void {
+    this.userService.updateProfile$(editProfileForm.value).subscribe({
+      next: (currentUser) => {
+        this.currentUser = currentUser;
+        this.isEdited = false;
+        window.location.reload();
       },
       error: () => {
         this.router.navigate(['/home']);
       }
     })
   }
-  
+
+  // profilePictureChange(event: InputEvent) {
+  //   console.log(event)
+  // }
 }
-
-// this.store.dispatch(updateProfileStarted({
-//   user: {
-  // this.authService.currentUser$ = { 
-  //   // username: this.editProfileForm.value.username,
-  //   email: this.editProfileForm.value.email,
-  //   country: this.editProfileForm.value.country,
-    // profilePicture: this.newProfilePicture,
-
-  // }
-  // }
-// }));

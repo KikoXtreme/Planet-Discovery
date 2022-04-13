@@ -23,8 +23,14 @@ div {
 
 div p {
     font-weight: bold;
-    text-decoration: underline dotted greenyellow;
+    text-decoration: underline dotted aqua;
+    color: aqua;
 }
+
+/* div i {
+    font-weight: bold; 
+    text-decoration: underline dotted greenyellow;
+} */
 
 .latest1 {
     text-align: center;

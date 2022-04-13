@@ -7,7 +7,7 @@
             </a>
             <div class="columns">
                 <div>
-                    <p>Date and Time: <time>{{planet.created_at | date: 'dd-MMM-yyyy hh:mm a'}}</time></p>
+                    <p>Date and Time: <time>{{planet.created_at | date: 'dd-MMM-yyyy / hh:mm:ss a'}}</time></p>
                     <div class="nick-name">
                         <p>Explorer: <span>{{planet.userId.username}}</span></p>
                     </div>
@@ -33,17 +33,18 @@
                 <h2 *ngIf="planet.planetName.length <= 20">{{planet.planetName}}</h2>
             </a>
             <div class="columns">
-          
-                    <p>Discovered since: <time>{{planet.created_at | time}}</time></p>
-                    <div class="nick-name">
-                        <p>Discovered by: <span>{{planet.userId.username}}</span></p>
-                    </div>
-
-                    <div class="footer">
-                        <i *ngIf="(isLoggedIn$ | async)" class="fas fa-thumbs-up"></i>
-                        <i *ngIf="(isLoggedIn$ | async)" class="fas fa-thumbs-down"></i>
-                        <p><span></span> likes</p>
-                    </div>
+                <div class="nick-name-latest">
+                    <p>Discovered since: <span><time>{{planet.created_at | time}} </time>
+                            <i class="fa fa-clock-o" aria-hidden="true"></i></span></p>
+                </div>
+                <div class="nick-name-latest">
+                    <p>Discovered by: <span>{{planet.userId.username}}</span></p>
+                </div>
+                <div class="footer">
+                    <i *ngIf="(isLoggedIn$ | async)" class="fas fa-thumbs-up"></i>
+                    <!-- <i *ngIf="(isLoggedIn$ | async)" class="fas fa-thumbs-down"></i> -->
+                    <p><span></span> likes</p>
+                </div>
             </div>
         </div>
         <!-- <app-post-list [planetId]="planet._id"></app-post-list> -->
