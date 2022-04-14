@@ -13,9 +13,9 @@
                     </div>
                 </div>
                 <div class="subscribers">
-                    <button *ngIf="(isLoggedIn$ |async)" [class.subscribe]="canSubscribe"
-                        [class.unsubscribe]="!canSubscribe">
-                        {{canSubscribe ? 'Subscribe' : 'Unsubscribe'}}
+                    <button *ngIf="(isLoggedIn$ |async)" [class.subscribe]="(canSubscribe$ | async)"
+                        [class.unsubscribe]="!(canSubscribe$ | async)">
+                        {{(canSubscribe$ | async) ? 'Subscribe' : 'Unsubscribe'}}
                     </button>
                     <p>Subscribers: <span>{{planet.subscribers.length}}</span></p>
                 </div>
@@ -38,12 +38,15 @@
                             <i class="fa fa-clock-o" aria-hidden="true"></i></span></p>
                 </div>
                 <div class="nick-name-latest">
-                    <p>Discovered by: <span>{{planet.userId.username}}</span></p>
+                    <p>Discovered by: <span>{{planet.userId.username}} <i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+                        
+                    </p>
                 </div>
                 <div class="footer">
-                    <i *ngIf="(isLoggedIn$ | async)" class="fas fa-thumbs-up"></i>
-                    <!-- <i *ngIf="(isLoggedIn$ | async)" class="fas fa-thumbs-down"></i> -->
-                    <p><span></span> likes</p>
+                    <!-- <i (click)="like(comment)" *ngIf="(isLoggedIn$ | async) && canLike(comment)" class="fas fa-thumbs-up"></i>
+                    <i (click)="unlike(comment)" *ngIf="(isLoggedIn$ | async) && !canLike(comment)" class="fas fa-thumbs-down"></i>
+                    <p><span>{{comment.likes.length}}</span> likes</p> -->
+                    <p>Followers:<span> {{planet.subscribers.length}}</span></p>
                 </div>
             </div>
         </div>

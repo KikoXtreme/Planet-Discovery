@@ -9,8 +9,8 @@
             <div class="subscribers">
                 <p>Subscribers: <span>{{planet.subscribers.length}}</span></p>
                 <ng-container *ngIf="(isLoggedIn$ | async)">
-                    <button *ngIf="canSubscribe" class="subscribe">Subscribe</button>
-                    <button *ngIf="!canSubscribe" class="unsubscribe">Unsubscribe</button>
+                    <button (click)="subscribe()" *ngIf="canSubscribe" class="subscribe">Subscribe</button>
+                    <button (click)="unsubscribe()" *ngIf="!canSubscribe" class="unsubscribe">Unsubscribe</button>
                 </ng-container>
             </div>
         </div>
@@ -30,13 +30,14 @@
             </div>
         </div>
         <div class="footer">
-            <i *ngIf="(isLoggedIn$ | async) && canLike(comment)" class="fas fa-thumbs-up"></i>
-            <i *ngIf="(isLoggedIn$ | async) && !canLike(comment)" class="fas fa-thumbs-down"></i>
+            <i (click)="like(comment)" *ngIf="(isLoggedIn$ | async) && canLike(comment)" class="fas fa-thumbs-up"></i>
+            <i (click)="unlike(comment)" *ngIf="(isLoggedIn$ | async) && !canLike(comment)" class="fas fa-thumbs-down"></i>
             <p><span>{{comment.likes.length}}</span> likes</p>
         </div>
     </div>
     <div *ngIf="(isLoggedIn$ | async)" class="answer-comment">
-        <p>{{(currentUser$ | async).username}}'s comment: </p>
+        <p>{{currentUser.username}}'s comment: </p>
+        <!-- <p>{{(currentUser$ | async).username}}'s comment: </p> -->
         <div class="answer">
             <form>
                 <textarea name="postText" id="comment" cols="30" rows="10"></textarea>

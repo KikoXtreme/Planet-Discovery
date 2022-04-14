@@ -5,6 +5,6 @@ const { postController } = require('../controllers');
 
 // middleware that is specific to this router
 
-router.put('/:postId', auth(), postController.like);
+router.put('/:postId', auth(), postController.dislike);
 
 module.exports = router
