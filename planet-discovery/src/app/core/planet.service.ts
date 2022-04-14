@@ -6,6 +6,11 @@ import { IPlanet, IPost } from './interfaces';
 
 const apiUrl = environment.apiUrl;
 
+export interface IPage<T> {
+  results: T[];
+  totalResults: number;
+}
+
 @Injectable()
 export class PlanetService {
 
@@ -24,6 +29,19 @@ export class PlanetService {
       })
     });
   }
+
+  // Pagination
+  loadPlanetPageList$(/*searchValue: string = '',*/ startIndex: number, limit: number): Observable<IPage<IPlanet>> {
+    return this.httpClient.get<IPage<IPlanet>>(`${apiUrl}/planets/list`, {
+      params: new HttpParams({
+        fromObject: {
+          startIndex,
+          limit,
+        }
+      })
+    });
+  }
+
   // TODO with credential true???
   loadPlanetById(id: string): Observable<IPlanet<IPost>> {
     return this.httpClient.get<IPlanet<IPost>>(`${apiUrl}/planets/${id}`);

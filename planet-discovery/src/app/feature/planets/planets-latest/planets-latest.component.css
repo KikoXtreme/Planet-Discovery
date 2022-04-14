@@ -37,3 +37,28 @@ div p {
     color: white;
     font-size: 25px;
 }
+
+.latest2 {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    
+}
+
+.latest2 button{
+    text-align: center;
+    text-indent: 0.2em;
+    overflow-x: hidden;
+    color: white;
+    font-size: 20px;
+    background: none;
+    box-shadow: 0 0 3em 0 rgba(255, 255, 255, 0.5);
+    border-radius: 1.5em;
+    border: .1em solid rgb(255, 255, 255);
+}
