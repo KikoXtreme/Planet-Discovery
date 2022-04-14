@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "planet-discovery",
+  "private_key_id": "7612f72a2d7cc82f4a70405df39ada5143283306",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC6UWCRniWEOK7v\n9YwQ6olz2FVKYyLOKsCq0IDBf3zWvWSWkoPldtWjPJn6loxPELnzR0M0gyGGEBSw\nAC+SIj99Qq+c5MNWaOsA2bz98VPYebP8XxesvSloBXB2+SrUgtfVtzP+i8v06beM\nAIoSdN0YAdmSszsVaGmLljkPfSP/8rllo73DvhsnJAo6PDmY12ZqOaI7ijKcxuX4\nxedJlieiR/aLl0F7R9ObBl0DNFASqvzvbg7BKT641yWKZ9/kGgOF1HCIFpTJg5I8\nkXdr8wIWkvDJNwCTijUIsKGZw17vyOK86iUs66lrG+0cyyFBqwNCa2DLHyLlq0/o\n2Dh//pbzAgMBAAECggEAGsxMlvUyUTJemv3sH5y+7g4YtQ0i5Zi0Qyf1H5+owtwq\nb8EdaRouqn6zaPL8Cv04DvvaIzSUfvX+JmhdxJIveTfnuVRqnMQ/aiJnMqE3cuSM\n/4i6h3+3nmdgiy7Vuwt3ZBz9xKgHywSjVTwt9Rn2Q5c0hjXy6BEvU8KPbMu41f2t\nAYE5pZdZa2VqIOU+AeSod2jYD15h1vWYdppOe2hsbv5TW6fElpQMdlnG7SHDb6/G\ntamzUyEeZH4wIeiXLZ/HCGA9fnCRqXYZVz0tz0Zsn14O4xR+ipj/422hjJu3eaNZ\n+BAgAiwIPSPEKxBqQpl8jzozrVdiEe4bJfLK2kfZ5QKBgQDfmN2yBMrIkboRXnjy\n6TB9JVvf9+zFWDrrDJS90gVg3mTE+Ctde0olhS3Pv1vWydZeNEVs4u9m4hCy+OeM\n4e1NO/YBs6SU5gypKljMBQRfSkxDQNfbAm/5y4WvccA9SPc+n047huMGn2pk6tzq\nrLMCF+WU+1Wko9sWEE6UaHUedQKBgQDVUYEU+vBl8zN6X4evH/FxOzwTj8lx67H3\nxqI2EmFZOCZ28Y3AJoVA/PLdh51FYtVg9yP9EPNNkVn7fCqyI4D4rX8qJnwXN4D0\nk8Hud3FTO+D4vV68bxlXD2jnbBYxxQPG9S5fJ7NbNwYEoW1fseLEUPsfijuQyerr\nqzY6rvsCxwKBgGonXwlHMSbr2JSqb22TvAuOEwJP6D8A1mgFPxCnhxooO1swHxZw\nlBEgG1HIHcfpZzauRk+dpd8IcLknZncCQ/EpCHBiYz61wUkG68VglGTRF0fOnyxB\nCfxj3YIf1Q7Dd25pn3CvZ1Ublh13S462kv3pbnu+nzhc+oSNFWFr/j6JAoGAPC/Z\n5syCpZE/9ggcJWoy2krnQXGxWcYxmYJe5Di9ZMn1+FthLlTwBg0YjS6lTh17rPcu\nHUn6C+m15MH83fQsgH2bQo5HNtm/NcK21gy3Wc+sQyJTJ4GFOc4sQBd8D6DR1wH4\ninqOHW9h8E6HqJdtLwzWPejns4t1D/dnvpj+U6MCgYA63j5vrTFQWUvLb4AefP8Z\nXf/rKA3Ed8WK0uYlAKHAiX2EdBo2qMvVNvVmTebVMeBt2IzI+5I9BkF1BY/AjAwN\nT9chlEAmaw9QDKmKY3qq0c+67Q/jVHLIdGj3xlGjDxC9WaB4PaE136Wmdp2iED/S\nRuIKKKU40XQiSlWyr3vx3w==\n-----END PRIVATE KEY-----\n",
+  "client_email": "planet-discovery-profile@planet-discovery.iam.gserviceaccount.com",
+  "client_id": "115137197962304286683",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/planet-discovery-profile%40planet-discovery.iam.gserviceaccount.com"
+}

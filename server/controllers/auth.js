@@ -94,18 +94,12 @@ function getProfileInfo(req, res, next) {
 
 function editProfileInfo(req, res, next) {
     const { _id: userId } = req.user;
-    const { country, username, email } = req.fields;
+    const { country, username, email } = req.body;
 
-    const newProfilePicture = req.files.profilePicture;
+    userModel.findOneAndUpdate({ _id: userId }, { country, username, email }, { runValidators: true, new: true })
+        .then(x => { res.status(200).json(x) })
+        .catch(next);
 
-    if (newProfilePicture) {
-        //Upload
-        //Save
-    } else {
-        userModel.findOneAndUpdate({ _id: userId }, { country, username, email }, { runValidators: true, new: true })
-            .then(x => { res.status(200).json(x) })
-            .catch(next);
-    }
 }
 
 module.exports = {

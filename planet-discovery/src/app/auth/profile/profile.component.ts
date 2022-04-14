@@ -48,7 +48,7 @@ export class ProfileComponent implements OnInit {
   }
 
   updateProfile(editProfileForm: NgForm): void {
-    this.userService.updateProfile$(editProfileForm.value).subscribe({
+    this.userService.updateProfile$(editProfileForm.value).pipe().subscribe({
       next: (currentUser) => {
         this.currentUser = currentUser;
         this.isEdited = false;
@@ -60,8 +60,10 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  profilePictureChange(event: InputEvent) {
-    const input: HTMLInputElement = event.target as HTMLInputElement;
-    this.newProfilePicture = input.files[0];
-  }
+  // profilePictureChange(event: InputEvent) {
+  //   const input: HTMLInputElement = event.target as HTMLInputElement;
+  //   this.newProfilePicture = input.files[0];
+  //   console.log(input)
+  //   console.log(this.newProfilePicture)
+  // }
 }
