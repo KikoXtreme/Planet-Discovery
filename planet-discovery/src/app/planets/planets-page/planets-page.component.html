@@ -1,24 +1,16 @@
 <main>
     <p *ngIf="!(isLoggedIn$ | async)" class="ppp">
-        Welcome Space Explorer, please Login or Register!
+        Welcome Space Explorer, please Register or Login!
     </p>
     <div *ngIf="!(isLoggedIn$ | async)" class="container">
         <ul>
             <li>
-                <a (click)="navigateToLogin()">
-                    Login
-                </a>
+                <a routerLink="/user/login">Login</a>
             </li>
             <li>
-                <a (click)="navigateToRegister()">
-                    Register
-                </a>
+                <a routerLink="/user/login">Register</a>
             </li>
         </ul>
     </div>
     <app-planets-list></app-planets-list>
 </main>
-
-<!-- <aside>
-    <app-aside></app-aside>
-</aside> -->

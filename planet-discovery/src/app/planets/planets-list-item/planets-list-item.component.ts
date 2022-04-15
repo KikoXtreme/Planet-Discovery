@@ -5,8 +5,6 @@ import { AuthService } from 'src/app/auth.service';
 import { IPlanet, IPost, IUser } from 'src/app/core/interfaces';
 import { PlanetService } from 'src/app/core/planet.service';
 
-// import { PlanetsDetailsComponent } from 'src/app/feature/planets/planets-details/planets-details.component'
-
 @Component({
   selector: 'app-planets-list-item',
   templateUrl: './planets-list-item.component.html',
@@ -25,6 +23,7 @@ export class PlanetsListItemComponent implements OnChanges {
   canSubscribe: boolean = false;
   currentUser?: IUser;
   isUserOwner: boolean = false;
+  currentUser$: Observable<IUser> = this.authService.currentUser$;
 
 
   constructor(private authService: AuthService, public router: Router, private planetService: PlanetService,private activatedRoute: ActivatedRoute) { }

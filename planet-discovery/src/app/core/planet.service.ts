@@ -35,6 +35,7 @@ export class PlanetService {
     return this.httpClient.get<IPage<IPlanet>>(`${apiUrl}/planets/list`, {
       params: new HttpParams({
         fromObject: {
+
           startIndex,
           limit,
         }

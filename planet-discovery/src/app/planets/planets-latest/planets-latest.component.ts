@@ -26,21 +26,21 @@ export class PlanetsLatestComponent implements OnInit {
 
   ngOnInit(): void {
     // ---- last 3 pages with correct time
-    // this.planetService.loadPlanetList$()
-    //   .subscribe(planetList => {
-    //     this.planetList = planetList.reverse();
-    //     console.log(planetList[0].created_at)
-    //   });
+    this.planetService.loadPlanetList$()
+      .subscribe(planetList => {
+        this.planetList = planetList.reverse();
+        console.log(planetList[0].created_at)
+      });
 
     // ---- pagination with wrong order
-    this.pageChange$
-      .pipe(
-        switchMap(() => this.planetService.loadPlanetPageList$(this.currentPage * this.pageSize, this.pageSize))
-      )
-      .subscribe(planetList => {
-        this.planetList = planetList.results;
-        this.totalResults = planetList.totalResults;
-      });
+    // this.pageChange$
+    //   .pipe(
+    //     switchMap(() => this.planetService.loadPlanetPageList$(this.currentPage * this.pageSize, this.pageSize))
+    //   )
+    //   .subscribe(planetList => {
+    //     this.planetList = planetList.results;
+    //     this.totalResults = planetList.totalResults;
+    //   });
   }
 
   pageBack(): void {

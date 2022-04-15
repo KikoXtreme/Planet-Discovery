@@ -17,11 +17,4 @@ export class PlanetsPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  navigateToLogin(): void {
-    this.router.navigate(['/user/login']);
-  }
-
-  navigateToRegister(): void {
-    this.router.navigate(['/user/register']);
-  }
 }

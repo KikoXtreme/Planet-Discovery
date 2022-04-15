@@ -1,27 +1,44 @@
 <div class="planet-container" *ngIf="!(router.url === '/planets/latest')">
     <div class="planet-name-wrapper">
         <div class="planet-name">
-            <a [routerLink]="['/planets', planet._id]" class="normal">
+            <div *ngIf="(currentUser$ |async)">
+                <a [routerLink]="['/planets', planet._id]" class="normal">
+                    <h2 *ngIf="planet.planetName.length > 20">{{(planet.planetName | slice:0:20) + '...'}}</h2>
+                    <h2 *ngIf="planet.planetName.length <= 20">{{planet.planetName}}</h2>
+                </a>
+            </div>
+            <div *ngIf="!(currentUser$ |async)">
+                <a routerLink="/user/login" class="normal">
+                    <h2 *ngIf="planet.planetName.length > 20">{{(planet.planetName | slice:0:20) + '...'}}</h2>
+                    <h2 *ngIf="planet.planetName.length <= 20">{{planet.planetName}}</h2>
+                </a>
+            </div>
+            <!-- <a [routerLink]="['/planets', planet._id]" class="normal">
                 <h2 *ngIf="planet.planetName.length > 20">{{(planet.planetName | slice:0:20) + '...'}}</h2>
                 <h2 *ngIf="planet.planetName.length <= 20">{{planet.planetName}}</h2>
-            </a>
+            </a> -->
             <div class="columns">
                 <div>
-                    <p>Date and Time: <time>{{planet.created_at | date: 'dd-MMM-yyyy / hh:mm:ss a'}}</time></p>
+                    <p>Date and Time: <time>{{planet.created_at | date: 'dd-MMM-yyyy / hh:mm:ss a'}}
+                            <i class="fa fa-clock-o" aria-hidden="true"></i></time>
+                    </p>
                     <div class="nick-name">
-                        <p>Explorer: <span>{{planet.userId.username}}</span></p>
+                        <p>Planet's Explorer: <span>{{planet.userId.username}}
+                                <i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+                        </p>
                     </div>
                 </div>
                 <div class="subscribers">
-                    <button *ngIf="(isLoggedIn$ |async)" [class.subscribe]="(canSubscribe$ | async)"
+                    <!-- <button *ngIf="(isLoggedIn$ |async)" [class.subscribe]="(canSubscribe$ | async)"
                         [class.unsubscribe]="!(canSubscribe$ | async)">
                         {{(canSubscribe$ | async) ? 'Subscribe' : 'Unsubscribe'}}
-                    </button>
-                    <p>Subscribers: <span>{{planet.subscribers.length}}</span></p>
+                    </button> -->
+                    <p>Subscribers: <span>({{planet.subscribers.length}})
+                            <i class="fa fa-user-plus" aria-hidden="true"></i></span>
+                    </p>
                 </div>
             </div>
         </div>
-        <!-- <app-post-list [planetId]="planet._id"></app-post-list> -->
     </div>
 </div>
 
@@ -33,23 +50,21 @@
                 <h2 *ngIf="planet.planetName.length <= 20">{{planet.planetName}}</h2>
             </a>
             <div class="columns">
-                <div class="nick-name-latest">
+                <div class="nick-name-latest1">
                     <p>Discovered since: <span><time>{{planet.created_at | time}} </time>
                             <i class="fa fa-clock-o" aria-hidden="true"></i></span></p>
                 </div>
                 <div class="nick-name-latest">
-                    <p>Discovered by: <span>{{planet.userId.username}} <i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
-                        
+                    <p>Discovered by: <span>{{planet.userId.username}} <i class="fa fa-user-circle-o"
+                                aria-hidden="true"></i></span>
+
                     </p>
                 </div>
                 <div class="footer">
-                    <!-- <i (click)="like(comment)" *ngIf="(isLoggedIn$ | async) && canLike(comment)" class="fas fa-thumbs-up"></i>
-                    <i (click)="unlike(comment)" *ngIf="(isLoggedIn$ | async) && !canLike(comment)" class="fas fa-thumbs-down"></i>
-                    <p><span>{{comment.likes.length}}</span> likes</p> -->
-                    <p>Followers:<span> {{planet.subscribers.length}}</span></p>
+                    <p>Followers:<span> ({{planet.subscribers.length}}) <i class="fa fa-user-plus"
+                                aria-hidden="true"></i></span></p>
                 </div>
             </div>
         </div>
-        <!-- <app-post-list [planetId]="planet._id"></app-post-list> -->
     </div>
 </div>

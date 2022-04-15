@@ -1,9 +1,3 @@
-/* .planet-container {
-    display: inline-block;
-    flex-direction: column;
-    width: 600px;
-} */
-
 .planet-container a {
     text-decoration: none;
     color: inherit;
@@ -95,6 +89,19 @@ time {
 .nick-name-latest p span{
     /* display: block; */
     float: left;
+    /* clear: left; */
+    /* display:inline */
+}
+
+.nick-name-latest1 p {
+    /* display: block; */
+    text-align: left;
+    color: white;
+}
+.nick-name-latest1 p span{
+    /* display: block; */
+    float: left;
+    color: aqua;
     /* clear: left; */
     /* display:inline */
 }
