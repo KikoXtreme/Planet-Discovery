@@ -4,6 +4,7 @@ import { PlanetsDetailsComponent } from "./planets-details/planets-details.compo
 import { PlanetsLatestComponent } from "./planets-latest/planets-latest.component";
 import { PlanetsNewPageComponent } from "./planets-new-page/planets-new-page.component";
 import { PlanetsPageComponent } from "./planets-page/planets-page.component";
+import { PlanetsPaginationComponent } from "./planets-pagination/planets-pagination.component";
 
 const routes: Routes = [
     {
@@ -19,6 +20,10 @@ const routes: Routes = [
     {
         path: 'latest',
         component: PlanetsLatestComponent
+    },
+    {
+        path: 'pagination',
+        component: PlanetsPaginationComponent
     },
     {
         path: ':planetId',

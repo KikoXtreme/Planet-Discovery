@@ -34,7 +34,10 @@
                 <a routerLink="/about">About</a>
             </li>
             <li>
-                <a routerLink="/planets">Planets</a>
+                <a routerLink="/planets">Search for a Planets</a>
+            </li>
+            <li *ngIf="(isLoggedIn$ | async)">
+                <a routerLink="/planets/pagination">Planets</a>
             </li>
             <li>
                 <a routerLink="/planets/new">New Discovery</a>

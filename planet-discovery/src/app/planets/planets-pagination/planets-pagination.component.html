@@ -1,0 +1,22 @@
+<div class="latest1">
+    All Discovered Planets:
+</div>
+
+<!-- Pagination -->
+<div class="latest2">
+    <button [disabled]="currentPage == 0" (click)="pageBack()"><i class="fa fa-arrow-circle-left" aria-hidden="true"></i>&nbsp;Previous Page&nbsp;</button>
+    Showing ({{(currentPage * pageSize) + 1}} - {{(currentPage + 1) * pageSize > totalResults
+    ? totalResults
+    : (currentPage + 1) * pageSize}}) of ({{totalResults}}) results
+    <button [disabled]="(currentPage + 1) * pageSize >= totalResults" (click)="pageForward()">&nbsp;Next Page&nbsp;<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>&nbsp;</button>
+</div>
+
+
+<div *ngIf="planetList">
+    <app-planets-list-item *ngFor="let planet of planetList" [planet]="planet"></app-planets-list-item>
+    <div *ngIf="planetList.length === 0" class="planets-no">No planets!</div>
+</div>
+<div *ngIf="!planetList" class="loading">
+    <mat-spinner style="margin:0 auto;" color="warn"></mat-spinner>
+    Loading...
+</div>

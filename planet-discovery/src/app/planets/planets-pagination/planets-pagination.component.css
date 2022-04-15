@@ -1,0 +1,72 @@
+.loading {
+    color: white;
+    text-align: center;
+}
+
+.planets-no {
+    color: white;
+    font-size: 18px;
+    margin-top: 2em;
+    font-weight: bold;
+}
+
+div {
+    width: 600px;
+    margin: 1em;
+}
+
+.latest {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+div p {
+    font-weight: bold;
+    text-decoration: underline dotted aqua;
+    color: aqua;
+}
+
+.latest1 {
+    text-align: center;
+    color: white;
+    font-size: 35px;
+    text-decoration: underline;
+}
+
+.latest2 {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+}
+
+.latest2 button {
+    text-align: center;
+    text-indent: 0.2em;
+    overflow-x: hidden;
+    color: white;
+    font-size: 20px;
+    background: none;
+    box-shadow: 0 0 3em 0 rgba(255, 255, 255, 0.5);
+    border-radius: 1.5em;
+    border: .1em solid rgb(255, 255, 255);
+}
+
+.latest2 button:hover {
+    text-align: center;
+    text-indent: 0.2em;
+    overflow-x: hidden;
+    color: yellow;
+    font-size: 20px;
+    background: none;
+    box-shadow: 0 0 3em 0 rgba(255, 255, 255, 0.5);
+    border-radius: 1.5em;
+    border: .1em solid rgb(255, 255, 255);
+}

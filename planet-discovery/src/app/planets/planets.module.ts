@@ -12,6 +12,7 @@ import { PostsComponent } from './posts/posts.component';
 import { TimePipe } from './time.pipe';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { PagesModule } from 'src/app/pages/pages.module';
+import { PlanetsPaginationComponent } from './planets-pagination/planets-pagination.component';
 
 
 
@@ -24,7 +25,8 @@ import { PagesModule } from 'src/app/pages/pages.module';
     PlanetsDetailsComponent,
     PlanetsLatestComponent,
     PostsComponent,
-    TimePipe
+    TimePipe,
+    PlanetsPaginationComponent
 
   ],
   imports: [
