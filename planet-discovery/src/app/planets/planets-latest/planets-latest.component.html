@@ -1,4 +1,4 @@
-<div class="latest">
+<div *ngIf="planetList" class="latest">
     Time since the latest planet discovery:
 
     <p><span>{{planetList[planetList.length - 1].created_at | time }} </span><i class="fa fa-clock-o" aria-hidden="true"></i></p>

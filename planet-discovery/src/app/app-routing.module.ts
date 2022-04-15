@@ -24,7 +24,7 @@ const routes: Routes = [
   },
   {
     path: 'planets',
-    loadChildren: () => import('./feature/planets/planets.module').then(m => m.PlanetsModule),
+    loadChildren: () => import('./planets/planets.module').then(m => m.PlanetsModule),
   },
   {
     path: '**',
