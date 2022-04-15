@@ -1,4 +1,5 @@
 import { IBase } from "./base";
+import { IPost } from "./post";
 // import { IPost } from "./post";
 import { IUser } from "./user";
 

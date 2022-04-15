@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, mergeMap, switchMap, tap } from 'rxjs';
 import { IPlanet } from 'src/app/core/interfaces';
 import { PlanetService } from 'src/app/core/planet.service';
 
@@ -16,7 +16,6 @@ export class PlanetsLatestComponent implements OnInit {
   index: number = 0;
 
   // Pagination
-
   private pageChange$ = new BehaviorSubject(undefined);
   readonly pageSize = 4;
   currentPage: number = 0;
@@ -26,10 +25,21 @@ export class PlanetsLatestComponent implements OnInit {
   constructor(private planetService: PlanetService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.planetService.loadPlanetList$()
+    // ---- last 3 pages with correct time
+    // this.planetService.loadPlanetList$()
+    //   .subscribe(planetList => {
+    //     this.planetList = planetList.reverse();
+    //     console.log(planetList[0].created_at)
+    //   });
+
+    // ---- pagination with wrong order
+    this.pageChange$
+      .pipe(
+        switchMap(() => this.planetService.loadPlanetPageList$(this.currentPage * this.pageSize, this.pageSize))
+      )
       .subscribe(planetList => {
-        this.planetList = planetList.reverse();
-        console.log(planetList[0].created_at)
+        this.planetList = planetList.results;
+        this.totalResults = planetList.totalResults;
       });
   }
 

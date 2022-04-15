@@ -13,7 +13,7 @@ import { PlanetService } from 'src/app/core/planet.service';
 export class PlanetsDetailsComponent implements OnInit {
   planet: IPlanet<IPost>;
 
-  refreshThemeRequest$ = new BehaviorSubject(undefined);
+  newPlanetReq$ = new BehaviorSubject(undefined);
 
   canSubscribe: boolean = false;
   currentUser?: IUser;
@@ -31,7 +31,7 @@ export class PlanetsDetailsComponent implements OnInit {
         .pipe(
           mergeMap(params => {
             const planetId = params['planetId'];
-            return this.refreshThemeRequest$.pipe(mergeMap(() => this.planetService.loadPlanetById(planetId)))
+            return this.newPlanetReq$.pipe(mergeMap(() => this.planetService.loadPlanetById(planetId)))
           })
         ),
       this.authService.currentUser$
@@ -54,19 +54,19 @@ export class PlanetsDetailsComponent implements OnInit {
 
   subscribe(): void {
     this.planetService.subscribeToPlanet(this.planet._id)
-      .subscribe(() => this.refreshThemeRequest$.next(undefined));
+      .subscribe(() => this.newPlanetReq$.next(undefined));
   }
 
   unsubscribe(): void {
     this.planetService.unsubscribe(this.planet._id)
-      .subscribe(() => this.refreshThemeRequest$.next(undefined));
+      .subscribe(() => this.newPlanetReq$.next(undefined));
   }
 
   like(comment: IPost): void {
-    this.planetService.likePost(comment._id).subscribe(() => this.refreshThemeRequest$.next(undefined));
+    this.planetService.likePost(comment._id).subscribe(() => this.newPlanetReq$.next(undefined));
   }
 
   unlike(comment: IPost): void {
-    this.planetService.dislikePost(comment._id).subscribe(() => this.refreshThemeRequest$.next(undefined));
+    this.planetService.dislikePost(comment._id).subscribe(() => this.newPlanetReq$.next(undefined));
   }
 }

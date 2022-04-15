@@ -1,6 +1,6 @@
 import { Component, Input, OnChanges } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { BehaviorSubject, combineLatest, map, mergeMap, Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
 import { IPlanet, IPost, IUser } from 'src/app/core/interfaces';
 import { PlanetService } from 'src/app/core/planet.service';
@@ -19,11 +19,15 @@ export class PlanetsListItemComponent implements OnChanges {
 
   @Input() planet: IPlanet;
 
+//TODO subscribe
 
-  // refreshThemeRequest$ = new BehaviorSubject(undefined);
-  // currentUser?: IUser;
+  newPlanetReq$ = new BehaviorSubject(undefined);
+  canSubscribe: boolean = false;
+  currentUser?: IUser;
+  isUserOwner: boolean = false;
 
-  constructor(private authService: AuthService, public router: Router, private planetService: PlanetService) { }
+
+  constructor(private authService: AuthService, public router: Router, private planetService: PlanetService,private activatedRoute: ActivatedRoute) { }
 
   ngOnChanges(): void {
     // TODO this.canSubscribe = !this.planet.subscribers.includes('5fa64b162183ce1728ff371d');
@@ -34,19 +38,35 @@ export class PlanetsListItemComponent implements OnChanges {
 
       return !this.planet.subscribers.includes(currentUser._id);
     }))
+    // combineLatest([
+    //   this.activatedRoute.params
+    //     .pipe(
+    //       mergeMap(params => {
+    //         const planetId = params['planetId'];
+    //         return this.newPlanetReq$.pipe(mergeMap(() => this.planetService.loadPlanetById(planetId)))
+    //       })
+    //     ),
+    //   this.authService.currentUser$
+    // ])
+    //   .subscribe(([planet, user]) => {
+    //     this.currentUser = user
+    //     this.planet = planet;
+    //     this.canSubscribe = user && !this.planet.subscribers.includes(user?._id);
+    //   });
   }
 
-  // canLike(comment: IPost) {
+  // public canLike(comment: IPost) {
   //   return this.currentUser && !comment.likes.includes(this.currentUser._id);
   // }
 
-
-  // like(comment: IPost): void {
-  //   this.planetService.likePost(comment._id).subscribe(() => this.refreshThemeRequest$.next(undefined));
+  // subscribe(): void {
+  //   this.planetService.subscribeToPlanet(this.planet._id)
+  //     .subscribe(() => this.newPlanetReq$.next(undefined));
   // }
 
-  // unlike(comment: IPost): void {
-  //   this.planetService.dislikePost(comment._id).subscribe(() => this.refreshThemeRequest$.next(undefined));
+  // unsubscribe(): void {
+  //   this.planetService.unsubscribe(this.planet._id)
+  //     .subscribe(() => this.newPlanetReq$.next(undefined));
   // }
 
 }

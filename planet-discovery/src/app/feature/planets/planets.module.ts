@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Input, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlanetsNewPageComponent } from './planets-new-page/planets-new-page.component';
 import { PlanetsRoutingModule } from './planets-routing.module';

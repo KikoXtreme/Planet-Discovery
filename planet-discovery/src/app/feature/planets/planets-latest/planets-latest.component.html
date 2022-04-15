@@ -1,11 +1,11 @@
 <div class="latest">
     Time since the latest planet discovery:
 
-    <p><span>{{planetList[index].created_at | time }} </span><i class="fa fa-clock-o" aria-hidden="true"></i></p>
+    <p><span>{{planetList[planetList.length - 1].created_at | time }} </span><i class="fa fa-clock-o" aria-hidden="true"></i></p>
     <!-- <p>Date and Time: <time>{{planetList[0].created_at | time}}</time></p> -->
 </div>
 <div class="latest1">
-    Check the last 3 discovered planets below:
+    Check the last 5 discovered planets below:
 </div>
 
 <!-- Pagination -->
@@ -17,9 +17,10 @@
     <button [disabled]="(currentPage + 1) * pageSize >= totalResults" (click)="pageForward()">&nbsp;Next Page&nbsp;<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>&nbsp;</button>
 </div>
 
+<!-- Pagination -->
 <div *ngIf="planetList">
 
-    <app-planets-list-item *ngFor="let planet of planetList | slice:0:3" [planet]="planet"></app-planets-list-item>
+    <app-planets-list-item *ngFor="let planet of planetList | slice:0:5" [planet]="planet"></app-planets-list-item>
     <div *ngIf="planetList.length === 0" class="planets-no">No planets!</div>
 </div>
 <div *ngIf="!planetList" class="loading">
