@@ -23,7 +23,7 @@ import { PagesModule } from './feature/pages/pages.module';
     CoreModule.forRoot(),
     AppRoutingModule,
     PagesModule,
-    AuthModule //???
+    AuthModule
   ],
   providers: [
     {

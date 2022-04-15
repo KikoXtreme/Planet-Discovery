@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth.service';
-import { CreateUserData } from 'src/app/core/interfaces';
+import { ICreateUserData } from 'src/app/core/interfaces';
 import { emailValidator, passwordMatch } from '../util';
 
 @Component({
@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
   handleRegister(): void {
     const { username, email, passwords, country } = this.registerFormGroup.value;
 
-    const body: CreateUserData = {
+    const body: ICreateUserData = {
       username: username,
       email: email,
       password: passwords.password,
@@ -50,9 +50,9 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  navigateToLogin(): void {
-    this.router.navigate(['/user/login']);
-  }
+  // navigateToLogin(): void {
+  //   this.router.navigate(['/user/login']);
+  // }
 
 
   //could be used in html ->

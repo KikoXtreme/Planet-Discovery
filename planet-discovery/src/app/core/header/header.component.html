@@ -17,7 +17,6 @@
         <div class="mini-navbar" *ngIf="(isLoggedIn$ | async)">
             <ul>
                 <li>
-                    <!-- <a routerLink="/user/profile">Kiko's Profile</a> -->
                     <a routerLink="/user/profile">{{(currentUser$ | async).username}}'s Profile</a>
                 </li>
                 <li>

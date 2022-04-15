@@ -63,6 +63,7 @@ form.login{
 
 .login a:hover {
     cursor: pointer;
+    color: darkblue;
 }
 
 .login .field {

@@ -56,7 +56,6 @@ export class PlanetService {
     return this.httpClient.put<void>(`${apiUrl}/dislikes/${postId}`, {}, { withCredentials: true });
   }
 
-
   subscribeToPlanet(planetId: string): Observable<IPlanet> {
     return this.httpClient.put<IPlanet>(`${apiUrl}/planets/${planetId}`, {}, { withCredentials: true });
   }
@@ -64,5 +63,17 @@ export class PlanetService {
   unsubscribe(planetId: string): Observable<IPlanet> {
     return this.httpClient.put<IPlanet>(`${apiUrl}/planets/${planetId}/unsubscribe`, {}, { withCredentials: true });
   }
+
+  //TODO edit description
+  // getPost$(planetId: string, postId: string): Observable<IPost> {
+  //   return this.httpClient.get<IPost>(`${apiUrl}/planets/${planetId}/posts/${postId}`, { withCredentials: true });
+  // }
+
+  // editPost$(planetId: string, postId: string, planetData: { text: string }): Observable<IPost> {
+  //   return this.httpClient
+  //     .put<IPost>(`${apiUrl}/planets/${planetId}/posts/${postId}`, planetData, { withCredentials: true, observe: 'response' })
+  //     .pipe(map(response => response.body));
+  // .pipe(tap((currentUser) => this.currentUser = currentUser));
+  // }
 
 }

@@ -3,7 +3,6 @@
     <fieldset>
         <h2>Register</h2>
 
-        <!-- username -->
         <p class="field field-icon">
             <label for="username"><span><i class="fas fa-user-astronaut"></i></span></label>
             <input formControlName="username"
@@ -20,7 +19,6 @@
             </p>
         </ng-container>
 
-        <!-- email -->
         <p class="field field-icon">
             <label for="email"><span><i class="fas fa-at"></i></span></label>
             <input formControlName="email"
@@ -37,7 +35,6 @@
             </p>
         </ng-container>
 
-        <!-- password -->
         <div formGroupName="passwords">
             <p class="field field-icon">
                 <label for="password"><span><i class="fas fa-lock"></i></span></label>
@@ -55,7 +52,6 @@
                 </p>
             </ng-container>
 
-            <!-- rePassword -->
             <p class="field field-icon">
                 <label for="rePassword"><span><i class="fas fa-lock"></i></span></label>
                 <input
@@ -68,7 +64,6 @@
             </ng-container>
         </div>
 
-        <!-- country -->
         <p class="field field-icon">
             <label for="counry"><span><i class="fas fa-globe"></i></span></label>
             <input formControlName="country" type="text" name="country" id="country" placeholder="Bulgaria (optional)">
@@ -78,7 +73,7 @@
 
         <p class="text-center">
             Already registered?
-            <a (click)="navigateToLogin()">Log In</a>
+            <a routerLink="/user/login">Log In</a>
         </p>
 
     </fieldset>

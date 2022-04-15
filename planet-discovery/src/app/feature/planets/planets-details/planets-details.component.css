@@ -178,25 +178,26 @@
 
 
 .answer {
-    border: 1px solid;
-    border-radius: 0.3em;
-    flex-basis: 85%;
+    /* border: 1px solid; */
+    /* border-radius: 0.3em;
+    flex-basis: 85%; */
     text-align: center;
     /* box-shadow: 0 0 3em 0 rgb(255, 255, 255);
     border-radius: 1.5em;
     border: .1em solid rgb(255, 255, 255); */
 }
 
-.answer textarea {
+/* .answer textarea {
     width: 100%;
     margin-top: 1rem;
     box-shadow: 0 0 3em 0 rgb(255, 255, 255);
     border-radius: 1.5em;
     border: .1em solid rgb(255, 255, 255);
-}
+} */
 
-.answer button {
+.answer a {
     color: white;
+    text-decoration: none;
     margin: 0.5em 1em;
     padding: 0.2em 1em;
     box-shadow: 0 0 3em 0 rgb(255, 255, 255);
@@ -205,8 +206,9 @@
     background: linear-gradient(0deg, rgb(12, 0, 182) 0%, rgb(99, 169, 200) 35%, rgb(1, 17, 20) 100%);
 }
 
-.answer button:hover {
+.answer a:hover {
     cursor: pointer;
+    color: rgb(184, 184, 184);
 }
 
 .comment-area {

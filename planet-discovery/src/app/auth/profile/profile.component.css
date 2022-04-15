@@ -13,7 +13,6 @@
 }
 
 .profile h3 {
-    /* text-decoration: underline; */
     font-weight: bold;
 }
 
@@ -51,7 +50,6 @@
     padding: 0.6em 1.2em;
     outline: none;
     background: linear-gradient(0deg, rgb(12, 0, 182) 0%, rgb(99, 169, 200) 35%, rgb(1, 17, 20) 100%);
-    /* if not, remove */
 }
 
 .flex > input, .flex > div {
@@ -63,8 +61,7 @@
 
 .flex > div > input {
     text-align: center;
-
-    width: 77%;
+    width: 100%;
     border-radius: 1em;
 }
 
@@ -83,7 +80,3 @@
 .input-error {
     border-left: 3px solid red;
 }
-
-/* .input-error {
-    border-left-color: red;
-} */

@@ -56,19 +56,20 @@ form.register {
     background-color: #e9ecef;
 }
 
-.login a, .register a {
+.register a {
     color: #007bff;
 }
 
-.login a:hover, .register a:hover {
+.register a:hover {
     cursor: pointer;
+    color: darkblue;
 }
 
 .register .country {
     padding-right: 0.8em;
 }
 
-.login .field, .register .field {
+.register .field {
     display: flex;
     padding-bottom: 0;
 }

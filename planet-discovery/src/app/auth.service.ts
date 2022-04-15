@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, EMPTY, map, Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { CreateUserData, IUser } from './core/interfaces';
+import { ICreateUserData, IUser } from './core/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,7 @@ export class AuthService {
 
   constructor(private httpClient: HttpClient) { }
 
-  register$(userData: CreateUserData): Observable<IUser> {
+  register$(userData: ICreateUserData): Observable<IUser> {
     return this.httpClient.post<IUser>(`${environment.apiUrl}/register`, userData, { withCredentials: true });
   }
 
@@ -29,7 +29,6 @@ export class AuthService {
     return this.httpClient.post<void>(`${environment.apiUrl}/logout`, {}, { withCredentials: true });
   }
 
-  //TODO /user/profile???
   authenticate$(): Observable<IUser> {
     return this.httpClient
       .get<IUser>(`${environment.apiUrl}/users/profile`, { withCredentials: true })

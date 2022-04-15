@@ -108,9 +108,9 @@ div p {
 }
 
 a {
-  color: grey;
+  color: rgb(182, 182, 182);
 }
 
 a:hover {
-  color: rgb(88, 84, 84);
+  color: rgb(107, 103, 103);
 }

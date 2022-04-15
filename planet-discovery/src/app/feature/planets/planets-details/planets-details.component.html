@@ -36,12 +36,14 @@
         </div>
     </div>
     <div *ngIf="(isLoggedIn$ | async)" class="answer-comment">
-        <p>{{currentUser.username}}'s comment: </p>
+        <!-- <p>{{currentUser.username}}'s comment: </p> -->
         <!-- <p>{{(currentUser$ | async).username}}'s comment: </p> -->
         <div class="answer">
             <form>
-                <textarea name="postText" id="comment" cols="30" rows="10"></textarea>
-                <button>Post</button>
+                <!-- <textarea name="postText" id="comment" cols="30" rows="10"></textarea> -->
+                <a routerLink="/home">Back to home page</a>
+                <a routerLink="/planets">Go back</a>
+                <a routerLink="/planets/new">New Discovery</a>
             </form>
         </div>
     </div>

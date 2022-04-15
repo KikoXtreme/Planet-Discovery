@@ -1,18 +1,15 @@
 .welcome {
     padding: 0.3em 0.5em;
-    /* border: 1px solid rgba(153, 153, 153, 0.385); */
     border-radius: 0.3em;
     font-size: 15px;
     margin-top: 2em;
 }
 
 .welcome h3 {
-    /* background-color: #4ebced; */
     background: linear-gradient(0deg, rgb(12, 0, 182) 0%, rgb(99, 169, 200) 35%, rgb(1, 17, 20) 100%);
     border-style: solid;
     border-color: white;
     border-radius: 1.5em;
-    /* font-size: 1em; */
     width: 100%;
     padding: 0.5em 1em;
     color: white;
@@ -32,12 +29,13 @@
     border: none;
     border-radius: 1.5em;
     padding: 0.8em 4.5em;
-    /* margin: 1em; */
     background: linear-gradient(0deg, rgb(12, 0, 182) 0%, rgb(99, 169, 200) 35%, rgb(1, 17, 20) 100%);
 }
 
 .welcome a:hover {
     cursor: pointer;
+    color: rgb(201, 201, 201);
+    text-decoration: underline;
 }
 
 .welcome ul {

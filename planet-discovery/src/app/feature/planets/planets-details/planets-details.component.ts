@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BehaviorSubject, combineLatest, mergeMap, Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
 import { IPlanet, IPost, IUser } from 'src/app/core/interfaces';
@@ -13,17 +14,27 @@ import { PlanetService } from 'src/app/core/planet.service';
 export class PlanetsDetailsComponent implements OnInit {
   planet: IPlanet<IPost>;
 
+  @Input() planetId: string;
+  @Input() postId: string;
+
+  isEdited: boolean = false;
+  @ViewChild('editPostForm') editPostForm: NgForm
+
+
+  postList: IPost;
+
   newPlanetReq$ = new BehaviorSubject(undefined);
 
   canSubscribe: boolean = false;
   currentUser?: IUser;
+  currentPost?: IPost;
   isUserOwner: boolean = false;
   isLoggedIn$: Observable<boolean> = this.authService.isLoggedIn$;
 
-
   constructor(private activatedRoute: ActivatedRoute,
     private planetService: PlanetService,
-    private authService: AuthService) { }
+    private authService: AuthService,
+    private router: Router) { }
 
   ngOnInit(): void {
     combineLatest([
@@ -41,10 +52,15 @@ export class PlanetsDetailsComponent implements OnInit {
         this.planet = planet;
         this.canSubscribe = user && !this.planet.subscribers.includes(user?._id);
       });
+
     // const planetId = this.activatedRoute.snapshot.params['planetId'];
     // this.planetService.loadPlanetById(planetId).subscribe(planet=>{
     //   this.planet = planet;
     //   this.canSubscribe = !this.planet.subscribers.includes('5fa64b162183ce1728ff371d');
+    // });
+
+    // this.planetService.editPost$(this.planetId, this.postId, this.editPostForm.value).subscribe(postList => {
+    //   this.postList = postList;
     // });
   }
 
@@ -69,4 +85,31 @@ export class PlanetsDetailsComponent implements OnInit {
   unlike(comment: IPost): void {
     this.planetService.dislikePost(comment._id).subscribe(() => this.newPlanetReq$.next(undefined));
   }
+
+
+
+
+  // editPost(currentPost: IPost): void {
+  //   this.isEdited = true;
+
+  //   setTimeout(() => {
+  //     this.editPostForm.form.patchValue({
+  //       text: this.currentPost.text,
+  //     })
+  //   });
+
+  // }
+
+  // updatePost(editPostForm: NgForm): void {
+  //   this.planetService.editPost$(this.planetId, this.postId, this.editPostForm.value).pipe().subscribe({
+  //     next: (currentPost) => {
+  //       this.currentPost = currentPost;
+  //       this.isEdited = false;
+  //       window.location.reload();
+  //     },
+  //     error: () => {
+  //       this.router.navigate(['/home']);
+  //     }
+  //   })
+  // }
 }

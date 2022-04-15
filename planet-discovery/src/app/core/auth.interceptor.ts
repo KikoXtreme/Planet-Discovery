@@ -8,7 +8,6 @@ import {
 } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
 import { IUser } from './interfaces';
-import { ThisReceiver } from '@angular/compiler';
 import { AuthService } from '../auth.service';
 
 @Injectable()
@@ -22,8 +21,8 @@ export class AuthInterceptor implements HttpInterceptor {
         if (event instanceof HttpResponse) {
           // localhost:3000/api/login || localhost:3000/api/register
           if (event.url.endsWith('login') || event.url.endsWith('register')) {
-            const newlyLoggedUser: IUser = event.body;
-            this.authService.handleLogin(newlyLoggedUser);
+            const justLoggedUser: IUser = event.body;
+            this.authService.handleLogin(justLoggedUser);
           } else if (event.url.endsWith('logout')) {
             this.authService.handleLogout();
           }

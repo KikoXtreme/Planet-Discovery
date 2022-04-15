@@ -19,7 +19,6 @@ import { AboutPageComponent } from './about-page/about-page.component';
   ],
   exports:[
     HomePageComponent,
-    // TimeAgePipe
   ]
 })
 export class PagesModule { }
