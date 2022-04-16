@@ -10,7 +10,6 @@ import { PostService } from 'src/app/core/post.service';
 export class PostsComponent implements OnInit {
 
   @Input() planetId: string;
-
   postList: IPost[];
 
   constructor(private postService: PostService) { }

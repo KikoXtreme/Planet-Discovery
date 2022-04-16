@@ -13,10 +13,6 @@
                     <h2 *ngIf="planet.planetName.length <= 20">{{planet.planetName}}</h2>
                 </a>
             </div>
-            <!-- <a [routerLink]="['/planets', planet._id]" class="normal">
-                <h2 *ngIf="planet.planetName.length > 20">{{(planet.planetName | slice:0:20) + '...'}}</h2>
-                <h2 *ngIf="planet.planetName.length <= 20">{{planet.planetName}}</h2>
-            </a> -->
             <div class="columns">
                 <div>
                     <p>Date and Time: <time>{{planet.created_at | date: 'dd-MMM-yyyy / hh:mm:ss a'}}
@@ -29,10 +25,6 @@
                     </div>
                 </div>
                 <div class="subscribers">
-                    <!-- <button *ngIf="(isLoggedIn$ |async)" [class.subscribe]="(canSubscribe$ | async)"
-                        [class.unsubscribe]="!(canSubscribe$ | async)">
-                        {{(canSubscribe$ | async) ? 'Subscribe' : 'Unsubscribe'}}
-                    </button> -->
                     <p>Subscribers: <span>({{planet.subscribers.length}})
                             <i class="fa fa-user-plus" aria-hidden="true"></i></span>
                     </p>
@@ -56,12 +48,10 @@
                 </div>
                 <div class="nick-name-latest">
                     <p>Discovered by: <span>{{planet.userId.username}} <i class="fa fa-user-circle-o"
-                                aria-hidden="true"></i></span>
-
-                    </p>
+                                aria-hidden="true"></i></span></p>
                 </div>
                 <div class="footer">
-                    <p>Followers:<span> ({{planet.subscribers.length}}) <i class="fa fa-user-plus"
+                    <p>Subscribers:<span> ({{planet.subscribers.length}}) <i class="fa fa-user-plus"
                                 aria-hidden="true"></i></span></p>
                 </div>
             </div>

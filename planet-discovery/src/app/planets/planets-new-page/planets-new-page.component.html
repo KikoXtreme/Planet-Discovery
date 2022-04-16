@@ -2,7 +2,7 @@
     <div class="header-background">
         <span>New Discovery</span>
     </div>
-    <form #newPlanetForm="ngForm" (ngSubmit)="submitNewPlanet(newPlanetForm)">
+    <form #newPlanetForm="ngForm" (ngSubmit)="addNewPlanet(newPlanetForm)">
         <div class="new-planet-title">
             <label for="planetName">Planet's Name <span class="red">* </span></label>
             <input #planetName="ngModel" type="text" name="planetName" ngModel id="planetName" required minlength="5">
@@ -18,8 +18,9 @@
         </div>
         <div class="new-planet-content">
             <label for="postText">Planet's Description <span class="red">*</span></label>
-            <textarea #postText="ngModel" type="text" name="postText" ngModel id="postText" rows="8" class="height" required minlength="10"></textarea>
-            
+            <textarea #postText="ngModel" type="text" name="postText" ngModel id="postText" rows="8" class="height"
+                required minlength="10"></textarea>
+
             <ng-container *ngIf="postText.touched && postText.invalid">
                 <p *ngIf="postText.errors['required']" class="error">
                     The field with your description is required.

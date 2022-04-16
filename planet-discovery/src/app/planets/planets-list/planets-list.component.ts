@@ -12,7 +12,6 @@ import { PlanetService } from 'src/app/core/planet.service';
 export class PlanetsListComponent implements OnInit {
 
   planetList: IPlanet[];
-
   searchControl = new FormControl();
   // searchControl = new FormControl('', { updateOn: 'blur' });
 

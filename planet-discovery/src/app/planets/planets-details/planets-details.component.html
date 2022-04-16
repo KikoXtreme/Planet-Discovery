@@ -1,10 +1,10 @@
 <div *ngIf="planet; else loadingIndicator" class="planet-content">
-    <!-- planet-title  -->
+
     <div class="planet-title">
         <div class="planet-name-wrapper">
             <div class="planet-name">
                 <h2>{{planet.planetName}}</h2>
-                <p>Date: <time>{{planet.created_at | date: 'medium'}}</time></p>
+                <p>Date: <time>{{planet.created_at | date: 'EEEE, MMMM d, y, h:mm:ss a'}}</time></p>
             </div>
             <div class="subscribers">
                 <p>Subscribers: <span>{{planet.subscribers.length}}</span></p>
@@ -15,7 +15,7 @@
             </div>
         </div>
     </div>
-    <!-- comment  -->
+
     <div class="comment" *ngFor="let comment of planet.posts">
         <header class="header">
             <p><span>{{comment.userId.username}}</span> posted on <time>{{comment.created_at | date: 'medium'}}</time>
@@ -36,11 +36,8 @@
         </div>
     </div>
     <div *ngIf="(isLoggedIn$ | async)" class="answer-comment">
-        <!-- <p>{{currentUser.username}}'s comment: </p> -->
-        <!-- <p>{{(currentUser$ | async).username}}'s comment: </p> -->
         <div class="answer">
             <form>
-                <!-- <textarea name="postText" id="comment" cols="30" rows="10"></textarea> -->
                 <a routerLink="/home">Home page</a>
                 <a routerLink="/planets">Search for a Planet</a>
                 <a routerLink="/planets/new">New Discovery</a>

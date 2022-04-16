@@ -1,4 +1,3 @@
-
 .planet-content {
     display: flex;
     flex-direction: column;
@@ -7,7 +6,6 @@
     padding-bottom: 1em;
 }
 
-/* planet title  */
 .planet-name-wrapper {
     display: flex;
     justify-content: space-between;
@@ -78,7 +76,6 @@
     margin: 0.5em;
 }
 
-/* comment  */
 .comment {
     margin-top: 1em;
     width: 100%;
@@ -131,9 +128,6 @@
     width: 5em;
     height: 5em;
     border: 1px solid;
-    /* box-shadow: 0 0 3em 0 rgb(255, 255, 255); */
-    /* border-radius: 0.5em; */
-    /* border: .1em solid rgb(255, 255, 255); */
 }
 
 .footer {
@@ -146,7 +140,6 @@
 }
 
 .footer i {
-    /* background-color: #ffffff; */
     border: none;
     cursor: pointer;
 }
@@ -163,10 +156,8 @@
     color: rgba(255, 0, 0, 0.8);
 }
 
-/* answer-comment */
 .answer-comment {
     width: 100%;
-    /* display: flex; */
     margin-top: 1em;
 }
 
@@ -178,22 +169,8 @@
 
 
 .answer {
-    /* border: 1px solid; */
-    /* border-radius: 0.3em;
-    flex-basis: 85%; */
     text-align: center;
-    /* box-shadow: 0 0 3em 0 rgb(255, 255, 255);
-    border-radius: 1.5em;
-    border: .1em solid rgb(255, 255, 255); */
 }
-
-/* .answer textarea {
-    width: 100%;
-    margin-top: 1rem;
-    box-shadow: 0 0 3em 0 rgb(255, 255, 255);
-    border-radius: 1.5em;
-    border: .1em solid rgb(255, 255, 255);
-} */
 
 .answer a {
     color: white;

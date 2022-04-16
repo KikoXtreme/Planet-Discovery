@@ -15,7 +15,7 @@ export class PlanetsNewPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitNewPlanet(newPlanetForm: NgForm): void {
+  addNewPlanet(newPlanetForm: NgForm): void {
     this.planetService.addPlanet$(newPlanetForm.value).subscribe({
       next: (planet) => {
         this.router.navigate(['/planets']);
