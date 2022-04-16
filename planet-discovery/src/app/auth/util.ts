@@ -6,7 +6,7 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
     if (!value) {
         return null
     }
-    if (!/.{6,}@gmail\.(bg|com)$/.test(value)) {
+    if (!/.{6,}@(gmail|yahoo|abv)\.(bg|com)$/.test(value)) {
         return {
             email: true,
         }
@@ -14,14 +14,14 @@ export function emailValidator(control: AbstractControl): ValidationErrors | nul
     return null;
 }
 
-export function passwordMatch(passwordFormControl: AbstractControl) {
-    const validtorFn: ValidatorFn = (rePasswordFormControl: AbstractControl) => {
-        if (passwordFormControl.value !== rePasswordFormControl.value) {
+export function passMatch(passFormControl: AbstractControl) {
+    const validatorFn: ValidatorFn = (repassFormControl: AbstractControl) => {
+        if (passFormControl.value !== repassFormControl.value) {
             return {
                 passwordMissmatch: true
             }
         }
         return null;
     }
-    return validtorFn;
+    return validatorFn;
 }

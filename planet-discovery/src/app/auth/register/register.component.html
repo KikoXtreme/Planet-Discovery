@@ -53,13 +53,13 @@
             </ng-container>
 
             <p class="field field-icon">
-                <label for="rePassword"><span><i class="fas fa-lock"></i></span></label>
+                <label for="repass"><span><i class="fas fa-lock"></i></span></label>
                 <input
-                    [class.input-error]="passwordsGroup.controls['rePassword'].touched && passwordsGroup.controls['rePassword'].invalid"
-                    formControlName="rePassword" type="password" name="rePassword" id="rePassword" placeholder="*****">
+                    [class.input-error]="passwordsGroup.controls['repass'].touched && passwordsGroup.controls['repass'].invalid"
+                    formControlName="repass" type="password" name="repass" id="repass" placeholder="*****">
             </p>
             <ng-container
-                *ngIf="passwordsGroup.controls['rePassword'].touched && passwordsGroup.controls['rePassword'].invalid">
+                *ngIf="passwordsGroup.controls['repass'].touched && passwordsGroup.controls['repass'].invalid">
                 <p class="error">Repeat Password does not match password!</p>
             </ng-container>
         </div>

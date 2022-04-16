@@ -2,7 +2,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthService } from './auth.service';
@@ -18,8 +17,8 @@ import { PagesModule } from './pages/pages.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
     HttpClientModule,
+    BrowserModule,
     RouterModule,
     CoreModule.forRoot(),
     AppRoutingModule,

@@ -19,7 +19,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   isMessageError: boolean;
 
   private isLoggingOut: boolean = false;
-
   private subscription: Subscription;
 
   constructor(public authService: AuthService, private router: Router, private messageBus: MessageBusService) { }
@@ -42,7 +41,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   logoutHandler(): void {
-
     if (this.isLoggingOut) {
       return;
     }

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { first, mergeMap, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/auth.service';
 import { IUser } from 'src/app/core/interfaces';
 import { UserService } from 'src/app/core/user.service';
@@ -18,8 +18,6 @@ export class ProfileComponent implements OnInit {
   currentUser: IUser;
   isEdited: boolean = false;
   currentUser$: Observable<IUser> = this.authService.currentUser$;
-
-  newProfilePicture?: File;
 
   constructor(private userService: UserService, private authService: AuthService, private router: Router) { }
 
@@ -60,10 +58,4 @@ export class ProfileComponent implements OnInit {
     })
   }
 
-  // profilePictureChange(event: InputEvent) {
-  //   const input: HTMLInputElement = event.target as HTMLInputElement;
-  //   this.newProfilePicture = input.files[0];
-  //   console.log(input)
-  //   console.log(this.newProfilePicture)
-  // }
 }

@@ -19,7 +19,7 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
         text: err?.error?.message || 'Something went wrong!',
         type: MessageType.Error,
       })
-
+      
       return throwError(err);
     }));
   }

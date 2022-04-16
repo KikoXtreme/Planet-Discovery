@@ -2,14 +2,9 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { IPlanet, IPost } from './interfaces';
+import { IPage, IPlanet, IPost } from './interfaces';
 
 const apiUrl = environment.apiUrl;
-
-export interface IPage<T> {
-  results: T[];
-  totalResults: number;
-}
 
 @Injectable()
 export class PlanetService {
@@ -21,34 +16,21 @@ export class PlanetService {
   }
 
   loadPlanetList$(searchValue: string = ''): Observable<IPlanet[]> {
-    return this.httpClient.get<IPlanet[]>(`${apiUrl}/planets?title=${searchValue}`, {
-      params: new HttpParams({
-        fromObject: {
-
-        }
-      })
-    });
+    return this.httpClient.get<IPlanet[]>(`${apiUrl}/planets?title=${searchValue}`, {});
   }
 
   // Pagination
   loadPlanetPageList$(/*searchValue: string = '',*/ startIndex: number, limit: number): Observable<IPage<IPlanet>> {
     return this.httpClient.get<IPage<IPlanet>>(`${apiUrl}/planets/list`, {
-      params: new HttpParams({
-        fromObject: {
-
-          startIndex,
-          limit,
-        }
-      })
+      params: new HttpParams({ fromObject: { startIndex, limit } })
     });
   }
 
-  // TODO with credential true???
   loadPlanetById(id: string): Observable<IPlanet<IPost>> {
     return this.httpClient.get<IPlanet<IPost>>(`${apiUrl}/planets/${id}`);
   }
 
-  //TODO for subscribe and like
+  // Subscribe and Like
   likePost(postId: string): Observable<void> {
     return this.httpClient.put<void>(`${apiUrl}/likes/${postId}`, {}, { withCredentials: true });
   }
@@ -65,16 +47,13 @@ export class PlanetService {
     return this.httpClient.put<IPlanet>(`${apiUrl}/planets/${planetId}/unsubscribe`, {}, { withCredentials: true });
   }
 
-  //TODO edit description
   // getPost$(planetId: string, postId: string): Observable<IPost> {
   //   return this.httpClient.get<IPost>(`${apiUrl}/planets/${planetId}/posts/${postId}`, { withCredentials: true });
   // }
-
   // editPost$(planetId: string, postId: string, planetData: { text: string }): Observable<IPost> {
   //   return this.httpClient
   //     .put<IPost>(`${apiUrl}/planets/${planetId}/posts/${postId}`, planetData, { withCredentials: true, observe: 'response' })
   //     .pipe(map(response => response.body));
   // .pipe(tap((currentUser) => this.currentUser = currentUser));
   // }
-
 }

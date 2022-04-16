@@ -53,7 +53,7 @@ Signs up user and returns the registered data as json.
     "email":"john@email.com",
     "username":"Johny",
     "password":"12345",
-    "rePassword":"12345"
+    "repass":"12345"
 }
 ```
 
@@ -436,30 +436,3 @@ Content:
     message: "Something went wrong!"
 }
 ```
-
-
-
-
-<!-- users
-.post /register - register new user
-.post /login - login user
-.post /logout - logout user
-
-.get /profile - get user info
-.post /profile - post user info
-.put /profile - edit user info
-
-planets
-.get /planets - lists all planets
-.post /planets - create new planet only for registered users
-
-posts:
-.get planets/id - get all posts for planet
-.post planets/id - create post in planet by id only for registered users
-.put planets/id/posts/id - edit post only possible for author
-.delete planets/id/posts/id - delete post only possible for author -->
-
-
-<!-- http://localhost:3000/api/users/register --  {"name":"SomeName","email":"some@email.com","username":"someUsername","password":"12345","rePassword":"12345"} -->
-<!--http://localhost:3000/api/planets -- {"planetName":"Some Planet", "userId":"5f85bf709a517d36f4abe656", "post": "Some Post" } -->
-<!-- http://localhost:3000/api/planets/5f858dd2d895ad23602db9d4  -- {"userId":"5f8580d25d1da62568dd38fd", "postText": "Some Post textsdfasdf" } -->

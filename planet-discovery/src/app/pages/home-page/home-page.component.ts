@@ -12,7 +12,6 @@ export class HomePageComponent implements OnInit {
 
   isLoggedIn$: Observable<boolean> = this.authService.isLoggedIn$;
 
-
   constructor(private authService: AuthService, public router: Router) { }
 
   ngOnInit(): void {
